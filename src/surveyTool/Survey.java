@@ -6,7 +6,10 @@ import javax.swing.JFrame;
 
 public class Survey {
 	private String name = "";
+	private String author = "";
 	private int length = 0;
+	private int numberOfQuestions = 0;
+	private Question[] questions;
 
 	public Survey(String name) {
 		this.name = name;
@@ -34,9 +37,5 @@ public class Survey {
 
 	public String toString() {
 		return null;
-	}
-	public static void main(String args[]) {
-		JFrame window = new JFrame("Survey");
-		window.setVisible(true);
 	}
 }
