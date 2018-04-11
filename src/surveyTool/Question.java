@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Question {
 	private String name = "";
-	private int id = -1;
+	private int id = -1; // based on number of questions already in survey
 	private String questionText = "";
 	private ArrayList<String> responses;
 
