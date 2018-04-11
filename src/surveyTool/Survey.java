@@ -1,41 +1,58 @@
+/**
+ * Survey.java - Class defines what a survey must hold and manage.  This class is for creating and altering surveys.
+ * 
+ * @author Alex Weininger and Niraj Mali
+ * @version 4/10/2018
+ */
 package surveyTool;
 
-import java.awt.*;
-
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 public class Survey {
 	private String name = "";
 	private String author = "";
-	private int length = 0;
-	private int numberOfQuestions = 0;
-	private Question[] questions;
+	private ArrayList<Question> questions;
+	private boolean isComplete = false;
+	private boolean isAnonymous = true;
 
 	public Survey(String name) {
 		this.name = name;
 	}
 
-	public Question[] getQuestions() {
+	public Survey(String name, String author, boolean isAnonymous) {
+		this.name = name;
+		this.author = author;
+		this.isAnonymous = isAnonymous;
+	}
+
+	// returns an ArrayList of questions in the survey
+	public ArrayList<Question> getQuestions() {
 		return null;
 	}
 
+	// adds a question to the survey
 	public void addQuestion(Question question) {
 
 	}
 
+	// removes the specified question from the survey
 	public boolean removeQuestion(int questionId) {
 		return false;
 	}
 
-	public String getResults() {
+	// displays the results/data of the survey in
+	public String displayResults() {
 		return null;
 	}
 
-	public String getAnswer(int questionId) {
+	// takes in a question id, returns an ArrayList of the answers for that question
+	public ArrayList<Question> getAnswers(int questionId) {
 		return null;
 	}
 
 	public String toString() {
-		return null;
+		return "Survey [name=" + name + ", author=" + author + ", questions=" + questions + ", isComplete=" + isComplete + ", isAnonymous=" + isAnonymous + ", getQuestions()=" + getQuestions() + ", displayResults()=" + displayResults()
+				+ "]";
 	}
 }
