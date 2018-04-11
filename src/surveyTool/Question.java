@@ -8,18 +8,23 @@ package surveyTool;
 
 import java.util.ArrayList;
 
-public class Question {
+public class Question implements Display {
 	private String name = "";
 	private int id = -1; // based on number of questions already in survey
 	private String questionText = "";
 	private ArrayList<String> responses;
 
-	public Question(String name, String qText) {
-		// stub
+	public Question(String name) {
+		this.name = name;
+	}
+	
+	public Question(String name, String questionText) {
+		this.name = name;
+		this.questionText = questionText;
 	}
 
-	public String getText() {
-		return null;
+	public void setName(String name) {
+		// set the name
 	}
 
 	public String getName() {
@@ -31,18 +36,34 @@ public class Question {
 	}
 
 	public void setText(String text) {
+		// set text
+	}
+
+	public String getText() {
+		return null;
+	}
+
+	public void addResponse(String response) {
+		// add the String to the end of the responses list
+	}
+
+	public void setResponses(ArrayList<String> responses) {
 		// stub
 	}
 
-	public void setName(String name) {
-		// stub
+	public ArrayList<String> getResponses() {
+		return null;
 	}
 
-	public void setAnswer(String answer) {
-		// stub
+	public boolean isValidResponse(String response) {
+		return true;
 	}
 
-	public String getAnswer() {
+	public String displayQuestion() {
+		return null;
+	}
+
+	public String toString() {
 		return null;
 	}
 }

@@ -23,6 +23,12 @@ public class ListResponseQuestion extends Question implements Display {
 		this.responseLimit = responseLimit;
 	}
 	
+	public ListResponseQuestion(String name, String questionText, int responseLimit, ArrayList<String> options) {
+		super(name, questionText);
+		this.responseLimit = responseLimit;
+		this.options = options;
+	}
+	
 	public void setOptions(ArrayList<String> options) {
 		this.options = options;
 	}
