@@ -7,5 +7,5 @@
 package surveyTool;
 
 interface Display {
-	public String displayQuestion();
+	public String displayQuestion(); // may be changed to void when JPanel is fully implemented in all classes
 }
