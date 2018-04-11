@@ -13,20 +13,21 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 
 	static ArrayList<String> options = new ArrayList<String>(Arrays.asList("true", "false")); // make an ArrayList of String containing "true" and "false"
 
+	// constructor
 	public BooleanResponseQuestion(String name, String questionText) {
 
 		super(name, questionText, options);
 	}
 
-	public boolean isValidResponse(String resp) {
+	public boolean isValidResponse(String resp) { // check if the user response if valid
 		return true;
 	}
 
-	public String displayQuestion() {
+	public String displayQuestion() { // display the question in JPanel
 		return null;
 	}
 
-	public String toString() {
+	public String toString() { // toString
 		return null;
 	}
 

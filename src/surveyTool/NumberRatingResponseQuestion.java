@@ -11,8 +11,9 @@ import java.util.ArrayList;
 
 public class NumberRatingResponseQuestion extends OptionResponseQuestion implements Display {
 
-	private int[] range = new int[2];
+	private int[] range = new int[2]; // defines the range of the number scale e.g [0, 10] means a 0-10 scale (we will have to make sure entering [10, 0] does not break the program)
 
+	// constructors
 	public NumberRatingResponseQuestion(String name, String questionText, int responseLimit) {
 		super(name, questionText);
 	}
@@ -26,24 +27,25 @@ public class NumberRatingResponseQuestion extends OptionResponseQuestion impleme
 	public static ArrayList<String> initOptions(int[] range) { // this method is static because it needs to be invoked in the constructor
 		ArrayList<String> options = new ArrayList<String>();
 		for (int i = range[0]; i < range[1]; i++) {
-			options.add("" + i);
+			options.add("" + i); // add each number to the options list
 		}
-		return options;
+		return options; // return the options list
 	}
 
-	public void setRange(int[] range) {
+	public void setRange(int[] range) { // set the options range
 		this.range = range;
+		super.setOptions(initOptions(range)); // since just changing this classes range varibale does not change the options list, we need to call super and initOptions again
 	}
 
-	public int[] getRange() {
+	public int[] getRange() { // return the range of the options
 		return this.range;
 	}
 
-	public String displayQuestion() {
+	public String displayQuestion() { // display this question in JPanel
 		return null;
 	}
 
-	public String toString() {
+	public String toString() { // toString
 		return null;
 	}
 }
