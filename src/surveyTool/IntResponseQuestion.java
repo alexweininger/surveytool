@@ -11,7 +11,7 @@
 
 package surveyTool;
 
-public class IntResponseQuestion extends Question implements Display {
+public class IntResponseQuestion extends TextResponseQuestion implements Display {
 
 	private int[] range = new int[2]; // range: Array list setting default acceptable range of numbers
 
