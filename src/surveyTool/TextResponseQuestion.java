@@ -10,6 +10,7 @@ public class TextResponseQuestion extends Question implements Display {
 
 	private int charLimit = 2000; // character limit of the user input (default is 2000)
 
+	// constructors
 	public TextResponseQuestion(String name, String qText) {
 		super(name, qText);
 	}
@@ -19,23 +20,23 @@ public class TextResponseQuestion extends Question implements Display {
 		this.charLimit = charLimit;
 	}
 	
-	public void setCharLimit(int charLimit) {
+	public void setCharLimit(int charLimit) { // set the character limit of the response
 		this.charLimit = charLimit;
 	}
 	
-	public int getCharLimit() {
+	public int getCharLimit() { // get the character limit
 		return this.charLimit;
 	}
 
-	public boolean isValidResponse(String resp) {
+	public boolean isValidResponse(String resp) { // check if the response is valid, e.g. if it is under the character limit
 		return true;
 	}
 
-	public String displayQuestion() {
+	public String displayQuestion() { // display the question with JPanel
 		return null;
 	}
 
-	public String toString() {
+	public String toString() { // toString
 		return null;
 	}
 }

@@ -9,11 +9,12 @@ package surveyTool;
 import java.util.ArrayList;
 
 public class Question implements Display {
-	private String name = "";
+	private String name = ""; // name of the question
 	private int id = -1; // based on number of questions already in survey
-	private String questionText = "";
-	private ArrayList<String> responses;
+	private String questionText = ""; // the question
+	private ArrayList<String> responses; // list of user responses to the question
 
+	// constructors
 	public Question(String name) {
 		this.name = name;
 	}
@@ -23,19 +24,19 @@ public class Question implements Display {
 		this.questionText = questionText;
 	}
 
-	public void setName(String name) {
-		// set the name
+	public void setName(String name) { // set the name of the question
+		this.name = name;
 	}
 
-	public String getName() {
+	public String getName() { // get the name of the question
 		return null;
 	}
 
-	public int getId() {
+	public int getId() { // get the id of the question
 		return this.id;
 	}
 
-	public void setText(String text) {
+	public void setText(String text) { // set the question text of the question
 		// set text
 	}
 
