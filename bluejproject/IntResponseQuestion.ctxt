@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=IntResponseQuestion
+comment0.text=\r\n\ NumberResponseQuestion\ Class\ Description\:\ \r\n\ --For\ a\ question\ that\ takes\ an\ integer\ as\ a\ response,\ \r\n\ --Implements\ Display\ interface,\ Inherits\ Question\ class\r\n\ \r\n\ TODO\ cast\ to\ String\ because\ all\ other\ questions\ are\ String?\r\n\ \r\n\ @author\ Alex\ Weininger\ and\ Niraj\ Mali\r\n\ @version\ 4/10/2018\r\n
+comment1.params=name\ qText
+comment1.target=IntResponseQuestion(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ IntResponseQuestion()\ Constructor\ Description\:\r\n\ \r\n\ --Parameters\:\ String\ name(Name/Description\ of\ question),\ String\ qText(Actual\r\n\ question\ being\ asked)\ --Same\ as\ super\ in\ this\ case\r\n
+comment2.params=name\ qText\ range
+comment2.target=IntResponseQuestion(java.lang.String,\ java.lang.String,\ int[])
+comment2.text=\r\n\ IntResponseQuestion()\ Override\ Constructor\ Description\:\r\n\ \r\n\ --Parameters\:\ String\ name(Name/Description\ of\ question),\ String\ qText(Actual\r\n\ question\ being\ asked),\ int[]\ range(Stores\ range\ of\ numbers\ accepted)\ --Adds\r\n\ int[]\ range\ variable\r\n
+comment3.params=range
+comment3.target=void\ setRange(int[])
+comment3.text=\r\n\ setRange\ Method\ Description\:\r\n\ \r\n\ --Parameters\:\ int[]\ range(Stores\ range\ of\ numbers\ accepted)\ --Returns\:\ void\r\n\ --Sets\ a\ new\ range\ for\ the\ question\r\n
+comment4.params=
+comment4.target=int[]\ getRange()
+comment4.text=\r\n\ getRange\ Method\ Description\:\r\n\ \r\n\ --Parameters\:\ none\ --Returns\:\ int[]\ --Grabs\ range\r\n
+comment5.params=resp
+comment5.target=boolean\ isValidResponse(int)
+comment5.text=\r\n\ isValidResponse\ Method\ Description\:\r\n\ \r\n\ --Parameters\:\ int\ resp(Response\ from\ user,\ integer\ only)\ --Returns\:\ boolean\r\n\ --Checks\ if\ user\ has\ given\ a\ valid\ response(in\ range,\ integer,\ etc.)\r\n
+comment6.params=
+comment6.target=java.lang.String\ displayQuestion()
+comment6.text=\r\n\ displayQuestion\ Method\ Description\:\r\n\ \r\n\ --Parameters\:\ none\ --Returns\:\ String\ --Required\ by\ implemented\ interface\r\n\ --Prints\ question\ to\ consoler,\ possibly\ JFrame\ if\ integrated\ into\ program\r\n
+numComments=7

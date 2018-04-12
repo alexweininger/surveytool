@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=TextResponseQuestion
+comment0.text=\r\n\ LongAnswerQuestion.java\ -\ class\ to\ represent\ a\ text\ response\ of\ practically\ unlimited\ length\r\n\ \r\n\ @author\ Alex\ Weininger\ and\ Niraj\ Mali\r\n\ @version\ 4/10/2018\r\n
+comment1.params=name\ qText
+comment1.target=TextResponseQuestion(java.lang.String,\ java.lang.String)
+comment2.params=name\ questionText\ charLimit
+comment2.target=TextResponseQuestion(java.lang.String,\ java.lang.String,\ int)
+comment3.params=charLimit
+comment3.target=void\ setCharLimit(int)
+comment4.params=
+comment4.target=int\ getCharLimit()
+comment5.params=resp
+comment5.target=boolean\ isValidResponse(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ displayQuestion()
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8

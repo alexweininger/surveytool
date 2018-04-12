@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Survey
+comment1.params=name
+comment1.target=Survey(java.lang.String)
+comment2.params=name\ author\ isAnonymous
+comment2.target=Survey(java.lang.String,\ java.lang.String,\ boolean)
+comment3.params=
+comment3.target=java.util.ArrayList\ getQuestions()
+comment4.params=question
+comment4.target=void\ addQuestion(Question)
+comment5.params=questionId
+comment5.target=boolean\ removeQuestion(int)
+comment6.params=
+comment6.target=java.lang.String\ getResultsAsString()
+comment7.params=
+comment7.target=java.lang.String\ displayResults()
+comment8.params=questionId
+comment8.target=java.util.ArrayList\ getResults(int)
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

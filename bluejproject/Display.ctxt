@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Display
+comment0.text=\r\n\ Interface\ to\ display\ a\ survey\ question\ with\ JPanel\r\n\ \r\n\ @author\ Alex\ Weininger\ and\ Niraj\ Mali\r\n\ @version\ 4/10/2018\r\n
+comment1.params=
+comment1.target=java.lang.String\ displayQuestion()
+numComments=2
