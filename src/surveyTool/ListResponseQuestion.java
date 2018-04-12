@@ -4,8 +4,8 @@
  * @author Alex Weininger and Niraj Mali
  * @version 4/10/2018
  */
-
 package surveyTool;
+
 import java.util.ArrayList;
 
 public class ListResponseQuestion extends Question implements Display {

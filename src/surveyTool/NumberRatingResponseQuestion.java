@@ -11,7 +11,8 @@ import java.util.ArrayList;
 
 public class NumberRatingResponseQuestion extends OptionResponseQuestion implements Display {
 
-	private int[] range = new int[2]; // defines the range of the number scale e.g [0, 10] means a 0-10 scale (we will have to make sure entering [10, 0] does not break the program)
+	private int[] range = new int[2]; // defines the range of the number scale e.g [0, 10] means a 0-10 scale (we will
+										// have to make sure entering [10, 0] does not break the program)
 
 	// constructors
 	public NumberRatingResponseQuestion(String name, String questionText, int responseLimit) {
@@ -34,7 +35,8 @@ public class NumberRatingResponseQuestion extends OptionResponseQuestion impleme
 
 	public void setRange(int[] range) { // set the options range
 		this.range = range;
-		super.setOptions(initOptions(range)); // since just changing this classes range varibale does not change the options list, we need to call super and initOptions again
+		super.setOptions(initOptions(range)); // since just changing this classes range variable does not change the options
+												// list, we need to call super and initOptions again
 	}
 
 	public int[] getRange() { // return the range of the options

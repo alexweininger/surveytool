@@ -12,71 +12,71 @@
 package surveyTool;
 
 public class IntResponseQuestion extends Question implements Display {
-	
-	private int[] range = new int[2]; //range: Array list setting default acceptable range of numbers
 
-	/*IntResponseQuestion() Constructor Description:
+	private int[] range = new int[2]; // range: Array list setting default acceptable range of numbers
+
+	/*
+	 * IntResponseQuestion() Constructor Description:
 	 * 
-	 * --Parameters: String name(Name/Description of question), String qText(Actual question being asked)
-	 * --Same as super in this case
-	*/
-	
+	 * --Parameters: String name(Name/Description of question), String qText(Actual
+	 * question being asked) --Same as super in this case
+	 */
+
 	public IntResponseQuestion(String name, String qText) {
 		super(name, qText);
 	}
-	
-	/*IntResponseQuestion() Override Constructor Description:
+
+	/*
+	 * IntResponseQuestion() Override Constructor Description:
 	 * 
-	 * --Parameters: String name(Name/Description of question), String qText(Actual question being asked),
-	 * 				int[] range(Stores range of numbers accepted)
-	 * --Adds int[] range variable
+	 * --Parameters: String name(Name/Description of question), String qText(Actual
+	 * question being asked), int[] range(Stores range of numbers accepted) --Adds
+	 * int[] range variable
 	 **/
-	
+
 	public IntResponseQuestion(String name, String qText, int[] range) {
 		super(name, qText);
 		this.range = range;
 	}
-	
-	/*setRange Method Description:
+
+	/*
+	 * setRange Method Description:
 	 * 
-	 * --Parameters: int[] range(Stores range of numbers accepted)
-	 * --Returns: void
+	 * --Parameters: int[] range(Stores range of numbers accepted) --Returns: void
 	 * --Sets a new range for the question
-	 * */
+	 */
 
 	public void setRange(int[] range) {
 		this.range = range;
 	}
-	
-	/*getRange Method Description:
+
+	/*
+	 * getRange Method Description:
 	 * 
-	 * --Parameters: none
-	 * --Returns: int[]
-	 * --Grabs range
+	 * --Parameters: none --Returns: int[] --Grabs range
 	 **/
 
-	public int[] getRange(){
+	public int[] getRange() {
 		return this.range;
 	}
-	
-	/*isValidResponse Method Description:
+
+	/*
+	 * isValidResponse Method Description:
 	 * 
-	 * --Parameters: int resp(Response from user, integer only)
-	 * --Returns: boolean
+	 * --Parameters: int resp(Response from user, integer only) --Returns: boolean
 	 * --Checks if user has given a valid response(in range, integer, etc.)
-	 * */
-	
+	 */
+
 	public boolean isValidResponse(int resp) {
 		return true;
 	}
-	
-	/*displayQuestion Method Description:
+
+	/*
+	 * displayQuestion Method Description:
 	 * 
-	 * --Parameters: none
-	 * --Returns: String
-	 * --Required by implemented interface
+	 * --Parameters: none --Returns: String --Required by implemented interface
 	 * --Prints question to consoler, possibly JFrame if integrated into program
-	 * */
+	 */
 	public String displayQuestion() {
 		return null;
 	}

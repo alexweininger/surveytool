@@ -4,6 +4,7 @@
  * @author Alex Weininger and Niraj Mali
  * @version 4/10/2018
  */
+
 package surveyTool;
 
 public class TextResponseQuestion extends Question implements Display {
@@ -15,16 +16,16 @@ public class TextResponseQuestion extends Question implements Display {
 		super(name, qText);
 	}
 
-	//Overloaded constructor: adds limit to characters typed in text
+	// Overloaded constructor: adds limit to characters typed in text
 	public TextResponseQuestion(String name, String questionText, int charLimit) {
 		super(name, questionText);
 		this.charLimit = charLimit;
 	}
-	
+
 	public void setCharLimit(int charLimit) { // set the character limit of the response
 		this.charLimit = charLimit;
 	}
-	
+
 	public int getCharLimit() { // get the character limit
 		return this.charLimit;
 	}

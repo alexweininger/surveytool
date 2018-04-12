@@ -4,6 +4,7 @@
  * @author Alex Weininger and Niraj Mali
  * @version 4/10/2018
  */
+
 package surveyTool;
 
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class Survey {
 	public String getResultsAsString() {
 		return null;
 	}
-	
+
 	// displays the results/data of the survey in
 	public String displayResults() {
 		return null;
@@ -55,7 +56,6 @@ public class Survey {
 	}
 
 	public String toString() {
-		return "Survey [name=" + name + ", author=" + author + ", questions=" + questions + ", isAnonymous=" + isAnonymous + ", getQuestions()=" + getQuestions() + ", displayResults()=" + displayResults()
-				+ "]";
+		return "Survey [name=" + name + ", author=" + author + ", questions=" + questions + ", isAnonymous=" + isAnonymous + ", getQuestions()=" + getQuestions() + ", displayResults()=" + displayResults() + "]";
 	}
 }
