@@ -15,6 +15,7 @@ public class TextResponseQuestion extends Question implements Display {
 		super(name, qText);
 	}
 
+	//Overloaded constructor: adds limit to characters typed in text
 	public TextResponseQuestion(String name, String questionText, int charLimit) {
 		super(name, questionText);
 		this.charLimit = charLimit;

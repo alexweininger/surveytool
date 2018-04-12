@@ -4,3 +4,7 @@
 /IntResponseQuestion.class
 /ListResponseQuestion.class
 /TextResponseQuestion.class
+/BooleanResponseQuestion.class
+/Main.class
+/NumberRatingResponseQuestion.class
+/OptionResponseQuestion.class
