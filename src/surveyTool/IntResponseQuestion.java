@@ -13,7 +13,7 @@ package surveyTool;
 
 public class IntResponseQuestion extends TextResponseQuestion implements Display {
 
-	private int[] range = new int[2]; // range: Array list setting default acceptable range of numbers
+	private int[] range = new int[2]; // range: Array of max number and minimum number acceptable
 
 	/*
 	 * IntResponseQuestion() Constructor Description:
@@ -68,7 +68,12 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 */
 
 	public boolean isValidResponse(int resp) {
-		return true;
+		if(resp >= 0 && resp < range.length) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	/*
@@ -78,7 +83,7 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 * --Prints question to consoler, possibly JFrame if integrated into program
 	 */
 	public String displayQuestion() {
-		return null;
+		return super.getText();
 	}
 
 }

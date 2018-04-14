@@ -8,6 +8,7 @@
 package surveyTool;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class NumberRatingResponseQuestion extends OptionResponseQuestion implements Display {
 
@@ -49,10 +50,10 @@ public class NumberRatingResponseQuestion extends OptionResponseQuestion impleme
 	}
 
 	public String displayQuestion() { // display this question in JPanel
-		return null;
+		return super.getText();
 	}
 
-	public String toString() { // toString
-		return null;
+	public String toString() {
+		return "NumberRatingResponseQuestion [range=" + Arrays.toString(range) + "]";
 	}
 }
