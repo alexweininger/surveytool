@@ -8,6 +8,10 @@ package surveyTool;
 
 import java.util.ArrayList;
 
+import javax.swing.*;
+
+import java.awt.*;
+
 public class Question implements Display {
 	private String name = ""; // name of the question
 	private int id = -1; // based on number of questions already in survey
@@ -64,10 +68,15 @@ public class Question implements Display {
 
 	//Required by interface to display question TODO
 	public String displayQuestion() {
-		return null;
+		String str = "";
+		
+		JFrame panel = new JFrame(this.getName());
+		panel.setVisible(true);
+		
+		return str;
 	}
 
 	public String toString() { // TODO
-		return "Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
+		return " Question toString: Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
 	}
 }

@@ -98,6 +98,15 @@ public class Survey {
 		}
 		this.displayResults();
 	}
+	
+	public void displaySurvey() {
+		//this.toString();
+		for(int i = 0; i < this.questions.size(); i++) {
+			Question q = this.questions.get(i);
+			q.displayQuestion();
+		}
+		//this.displayResults();
+	}
 
 	public String toString() {
 		return "Survey [name=" + name + ", author=" + author + ", questions=" + questions + ", isAnonymous=" + isAnonymous + ", getQuestions()=" + getQuestions() + "]";

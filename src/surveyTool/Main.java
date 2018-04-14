@@ -13,6 +13,8 @@ public class Main {
 		survey.addQuestion(name);
 		Question city = new Question("city question", "What city do you live in?");
 		survey.addQuestion(city);
-		survey.initSurvey(); // runs one instance of the survey
+		survey.displaySurvey(); // runs one instance of the survey
+//		survey.initSurvey();
+		System.out.println("hello");
 	}
 }
