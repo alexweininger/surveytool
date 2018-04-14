@@ -12,7 +12,7 @@ public class Question implements Display {
 	private String name = ""; // name of the question
 	private int id = -1; // based on number of questions already in survey
 	private String questionText = ""; // the question
-	private ArrayList<String> responses; // list of user responses to the question
+	private ArrayList<String> responses = new ArrayList<String>(); // list of user responses to the question
 
 	// constructors
 	public Question(String name) {

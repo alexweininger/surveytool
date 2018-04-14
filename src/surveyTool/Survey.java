@@ -7,11 +7,12 @@
 package surveyTool;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Survey {
 	private String name = "";				//Name of survey taker
 	private String author = "";				//Name of author
-	private ArrayList<Question> questions; // array list of the questions in the survey
+	private ArrayList<Question> questions = new ArrayList<Question>(); // array list of the questions in the survey
 	private boolean isAnonymous = true;		//If surveyor would like to be anonymous 
 
 	// constructors
@@ -28,11 +29,11 @@ public class Survey {
 		this.isAnonymous = isAnonymous;
 	}
 	
-	public void setName(String name) {
+	public void setName(String name) { // set name
 		this.name = name;
 	}
 	
-	public String getName() {
+	public String getName() { // get name
 		return this.name;
 	}
 
@@ -43,6 +44,8 @@ public class Survey {
 
 	// adds a question to the survey
 	public void addQuestion(Question question) {
+		System.out.println(question.toString());
+		System.out.println(questions.toString());
 		this.questions.add(question);
 	}
 
@@ -81,6 +84,19 @@ public class Survey {
 	// takes in a question id, returns an ArrayList of the answers for that question
 	public ArrayList<String> getResults(int questionId) {
 		return this.questions.get(questionId).getResponses();
+	}
+	
+	// runs one instance of the survey, to fill out multiple responses to a survey you need to run initSurvey more than once
+	public void initSurvey() {
+		Scanner kb = new Scanner(System.in);
+		this.toString();
+		for(int i = 0; i < this.questions.size(); i++) {
+			Question q = this.questions.get(i);
+			System.out.println(q.getText());
+			String resp = kb.nextLine();
+			q.addResponse(resp);
+		}
+		this.displayResults();
 	}
 
 	public String toString() {
