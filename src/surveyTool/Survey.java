@@ -9,6 +9,8 @@ package surveyTool;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.*;
+
 public class Survey {
 	private String name = "";				//Name of survey taker
 	private String author = "";				//Name of author
@@ -36,6 +38,14 @@ public class Survey {
 	public String getName() { // get name
 		return this.name;
 	}
+	
+//	public void setFrame(JFrame frame) {
+//		this.frame = frame;
+//	}
+//	
+//	public JFrame getFrame() {
+//		return this.frame;
+//	}
 
 	// returns an ArrayList of questions in the survey
 	public ArrayList<Question> getQuestions() {
@@ -100,10 +110,11 @@ public class Survey {
 	}
 	
 	public void displaySurvey() {
-		//this.toString();
+		JFrame frame = new JFrame(this.name);
 		for(int i = 0; i < this.questions.size(); i++) {
 			Question q = this.questions.get(i);
-			q.displayQuestion();
+			frame = q.displayQuestion();
+			frame.setVisible(true);
 		}
 		//this.displayResults();
 	}

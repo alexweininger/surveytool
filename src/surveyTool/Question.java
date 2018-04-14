@@ -49,7 +49,7 @@ public class Question implements Display {
 	}
 
 	public void addResponse(String response) {  // add the String to the end of the responses list
-		this.responses.add(response);
+		boolean add = this.responses.add(response);
 	}
 
 	public void setResponses(ArrayList<String> responses) {
@@ -67,16 +67,18 @@ public class Question implements Display {
 	}
 
 	//Required by interface to display question TODO
-	public String displayQuestion() {
+	public JFrame displayQuestion() {
 		String str = "";
 		
-		JFrame panel = new JFrame(this.getName());
-		panel.setVisible(true);
+		JFrame frame = new JFrame(this.getName());
 		
-		return str;
+		frame.setSize(300, 300);
+		
+		return frame;
 	}
 
 	public String toString() { // TODO
-		return " Question toString: Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
+		//return " Question toString: Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
+		return "Question toString";
 	}
 }
