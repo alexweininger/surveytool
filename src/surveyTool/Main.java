@@ -11,6 +11,8 @@ public class Main {
 		Survey survey = new Survey("Survey Test", "Alex", true);
 		Question name = new Question("name question", "What is your name?");
 		survey.addQuestion(name);
-		survey.initSurvey();
+		Question city = new Question("city question", "What city do you live in?");
+		survey.addQuestion(city);
+		survey.initSurvey(); // runs one instance of the survey
 	}
 }

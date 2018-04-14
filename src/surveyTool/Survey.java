@@ -29,11 +29,11 @@ public class Survey {
 		this.isAnonymous = isAnonymous;
 	}
 	
-	public void setName(String name) {
+	public void setName(String name) { // set name
 		this.name = name;
 	}
 	
-	public String getName() {
+	public String getName() { // get name
 		return this.name;
 	}
 
@@ -86,6 +86,7 @@ public class Survey {
 		return this.questions.get(questionId).getResponses();
 	}
 	
+	// runs one instance of the survey, to fill out multiple responses to a survey you need to run initSurvey more than once
 	public void initSurvey() {
 		Scanner kb = new Scanner(System.in);
 		this.toString();
