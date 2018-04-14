@@ -4,7 +4,6 @@
  * @author Alex Weininger and Niraj Mali
  * @version 4/10/2018
  */
-
 package surveyTool;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class Question implements Display {
 	public Question(String name) {
 		this.name = name;
 	}
-
+	
 	public Question(String name, String questionText) {
 		this.name = name;
 		this.questionText = questionText;
@@ -53,18 +52,22 @@ public class Question implements Display {
 		// stub
 	}
 
+	//Return responses to questions
 	public ArrayList<String> getResponses() {
 		return null;
 	}
 
+	//Validates response(range, data type, etc.)
 	public boolean isValidResponse(String response) {
 		return true;
 	}
 
+	//Required by interface to display question
 	public String displayQuestion() {
 		return null;
 	}
 
+	//toString method
 	public String toString() {
 		return null;
 	}

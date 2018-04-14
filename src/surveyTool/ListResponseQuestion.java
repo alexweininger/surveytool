@@ -4,8 +4,8 @@
  * @author Alex Weininger and Niraj Mali
  * @version 4/10/2018
  */
-package surveyTool;
 
+package surveyTool;
 import java.util.ArrayList;
 
 public class ListResponseQuestion extends Question implements Display {
@@ -14,16 +14,18 @@ public class ListResponseQuestion extends Question implements Display {
 	private ArrayList<String> responses; // list of responses the user selects and submits
 	private int responseLimit = -1; // the amount of options the user is allowed to submit
 
-	// constructors
+	// Constructor
 	public ListResponseQuestion(String name, String questionText) {
 		super(name, questionText);
 	}
-
+	
+	//Overloaded Constructor: adds responseLimit
 	public ListResponseQuestion(String name, String questionText, int responseLimit) {
 		super(name, questionText);
 		this.responseLimit = responseLimit;
 	}
 
+	//Overloaded Constructor: adds options to questions
 	public ListResponseQuestion(String name, String questionText, int responseLimit, ArrayList<String> options) {
 		super(name, questionText);
 		this.responseLimit = responseLimit;

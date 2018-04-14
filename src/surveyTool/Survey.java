@@ -4,21 +4,24 @@
  * @author Alex Weininger and Niraj Mali
  * @version 4/10/2018
  */
-
 package surveyTool;
 
 import java.util.ArrayList;
 
 public class Survey {
-	private String name = "";
-	private String author = "";
+	private String name = "";				//Name of survey taker
+	private String author = "";				//Name of author
 	private ArrayList<Question> questions; // array list of the questions in the survey
-	private boolean isAnonymous = true;
+	private boolean isAnonymous = true;		//If surveyor would like to be anonymous 
 
-	public Survey(String name) {
+	//Constructor that takes only name of surveyor
+	public Survey(String name) {	//Constructor that takes only name of surveyor
 		this.name = name;
 	}
-
+	
+	/*Constructor that overloads;
+	 * Adds author's name and if surveyor would like to be anonymous
+	 */
 	public Survey(String name, String author, boolean isAnonymous) {
 		this.name = name;
 		this.author = author;
@@ -44,7 +47,7 @@ public class Survey {
 	public String getResultsAsString() {
 		return null;
 	}
-
+	
 	// displays the results/data of the survey in
 	public String displayResults() {
 		return null;
@@ -56,6 +59,7 @@ public class Survey {
 	}
 
 	public String toString() {
-		return "Survey [name=" + name + ", author=" + author + ", questions=" + questions + ", isAnonymous=" + isAnonymous + ", getQuestions()=" + getQuestions() + ", displayResults()=" + displayResults() + "]";
+		return "Survey [name=" + name + ", author=" + author + ", questions=" + questions + ", isAnonymous=" + isAnonymous + ", getQuestions()=" + getQuestions() + ", displayResults()=" + displayResults()
+				+ "]";
 	}
 }
