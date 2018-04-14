@@ -57,31 +57,17 @@ public class Question implements Display {
 		return this.responses;
 	}
 
-<<<<<<< HEAD
 	//Validates response(range, data type, etc.)
 	public boolean isValidResponse(String response) {
 		return true;
 	}
 
-	//Required by interface to display question
+	//Required by interface to display question TODO
 	public String displayQuestion() {
-		return null;
-	}
-
-	//toString method
-	public String toString() {
-		return null;
-=======
-	public boolean isValidResponse(String response) { // TODO
-		return true;
-	}
-
-	public String displayQuestion() { // TODO
 		return null;
 	}
 
 	public String toString() { // TODO
 		return "Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
->>>>>>> e2ccb401d52073a9a86bb6ab25f77f16e047862a
 	}
 }
