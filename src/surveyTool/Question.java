@@ -29,7 +29,7 @@ public class Question implements Display {
 	}
 
 	public String getName() { // get the name of the question
-		return null;
+		return this.name;
 	}
 
 	public int getId() { // get the id of the question
@@ -37,26 +37,27 @@ public class Question implements Display {
 	}
 
 	public void setText(String text) { // set the question text of the question
-		// set text
+		this.questionText = text;
 	}
 
 	public String getText() {
-		return null;
+		return this.questionText;
 	}
 
-	public void addResponse(String response) {
-		// add the String to the end of the responses list
+	public void addResponse(String response) {  // add the String to the end of the responses list
+		this.responses.add(response);
 	}
 
 	public void setResponses(ArrayList<String> responses) {
-		// stub
+		this.responses = responses;
 	}
 
 	//Return responses to questions
 	public ArrayList<String> getResponses() {
-		return null;
+		return this.responses;
 	}
 
+<<<<<<< HEAD
 	//Validates response(range, data type, etc.)
 	public boolean isValidResponse(String response) {
 		return true;
@@ -70,5 +71,17 @@ public class Question implements Display {
 	//toString method
 	public String toString() {
 		return null;
+=======
+	public boolean isValidResponse(String response) { // TODO
+		return true;
+	}
+
+	public String displayQuestion() { // TODO
+		return null;
+	}
+
+	public String toString() { // TODO
+		return "Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
+>>>>>>> e2ccb401d52073a9a86bb6ab25f77f16e047862a
 	}
 }
