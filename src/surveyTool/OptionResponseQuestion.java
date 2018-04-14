@@ -10,7 +10,7 @@ package surveyTool;
 import java.util.ArrayList;
 
 public class OptionResponseQuestion extends ListResponseQuestion implements Display {
-
+	
 	// constructors
 	public OptionResponseQuestion(String name, String questionText) {
 		super(name, questionText, 1); // set the response limit to 1 by default
@@ -21,7 +21,12 @@ public class OptionResponseQuestion extends ListResponseQuestion implements Disp
 	}
 
 	public boolean isValidResponse(String resp) { // is the user response valid, returns boolean
-		return true;
+		for(int i = 0; i < ; i++) {
+			if(resp == options.get(i)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public String displayQuestion() { // display the question in JPanel

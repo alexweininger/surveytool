@@ -11,6 +11,8 @@
 
 package surveyTool;
 
+import java.util.Arrays;
+
 public class IntResponseQuestion extends TextResponseQuestion implements Display {
 
 	private int[] range = new int[2]; // range: Array of max number and minimum number acceptable
@@ -85,5 +87,10 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	public String displayQuestion() {
 		return super.getText();
 	}
+	
+	public String toString() {
+		return super.toString() + "IntResponseQuestion [range=" + Arrays.toString(range) + "]";
+	}
+
 
 }

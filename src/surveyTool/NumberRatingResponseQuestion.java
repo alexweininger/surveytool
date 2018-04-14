@@ -54,6 +54,6 @@ public class NumberRatingResponseQuestion extends OptionResponseQuestion impleme
 	}
 
 	public String toString() {
-		return "NumberRatingResponseQuestion [range=" + Arrays.toString(range) + "]";
+		return super.toString() + "NumberRatingResponseQuestion [range=" + Arrays.toString(range) + "]";
 	}
 }

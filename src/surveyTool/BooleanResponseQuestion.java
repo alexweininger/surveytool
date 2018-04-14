@@ -22,15 +22,20 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 	}
 
 	public boolean isValidResponse(String resp) { // check if the user response if valid
-		return true;
+		if(resp.equalsIgnoreCase("true") || resp.equalsIgnoreCase("false")){
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public String displayQuestion() { // display the question in JPanel
-		return null;
+		return super.getText();
 	}
 
-	public String toString() { // toString
-		return null;
+	public String toString() {
+		return super.toString() + "BooleanResponseQuestion []";
 	}
 
 }
