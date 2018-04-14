@@ -6,6 +6,8 @@
  */
 package surveyTool;
 
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -54,8 +56,6 @@ public class Survey {
 
 	// adds a question to the survey
 	public void addQuestion(Question question) {
-		System.out.println(question.toString());
-		System.out.println(questions.toString());
 		this.questions.add(question);
 	}
 
@@ -110,14 +110,35 @@ public class Survey {
 	}
 	
 	public void displaySurvey() {
-		JFrame frame = new JFrame(this.name);
+
+		
 		for(int i = 0; i < this.questions.size(); i++) {
+
 			Question q = this.questions.get(i);
-			frame = q.displayQuestion();
-			frame.setVisible(true);
+			q.displayQuestion();
 		}
-		//this.displayResults();
+		this.displayResults();
 	}
+	
+//	public void displaySurvey() {
+//		FlowLayout flow = new FlowLayout();
+//		JFrame frame = new JFrame(this.name);
+//		frame.setLayout(flow);
+//		
+//		Dimension d = new Dimension(600, 300);
+//		
+//		frame.setSize(d);
+//		
+//		for(int i = 0; i < this.questions.size(); i++) {
+//
+//			Question q = this.questions.get(i);
+//			
+//			boolean x = q.displayQuestion(frame);
+//			
+//			frame.setVisible(true);
+//		}
+//		//this.displayResults();
+//	}
 
 	public String toString() {
 		return "Survey [name=" + name + ", author=" + author + ", questions=" + questions + ", isAnonymous=" + isAnonymous + ", getQuestions()=" + getQuestions() + "]";

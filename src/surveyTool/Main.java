@@ -18,8 +18,7 @@ public class Main {
 		survey.addQuestion(city);
 		
 		survey.displaySurvey(); // runs one instance of the survey
+		survey.displaySurvey();
 		//survey.initSurvey();
-		
-		System.out.println("hello");
 	}
 }

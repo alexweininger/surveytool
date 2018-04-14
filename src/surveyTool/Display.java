@@ -9,7 +9,7 @@ package surveyTool;
 import javax.swing.JFrame;
 
 interface Display {
-	public JFrame displayQuestion(); 
+	public boolean displayQuestion(); 
 	
 	/* May be changed to void when JPanel is fully implemented in all classes
 	 * for not it returns String because we do not for sure know what we want it to return, 

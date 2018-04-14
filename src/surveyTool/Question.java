@@ -67,14 +67,11 @@ public class Question implements Display {
 	}
 
 	//Required by interface to display question TODO
-	public JFrame displayQuestion() {
-		String str = "";
+	public boolean displayQuestion() {
 		
-		JFrame frame = new JFrame(this.getName());
-		
-		frame.setSize(300, 300);
-		
-		return frame;
+		String resp = JOptionPane.showInputDialog(null, this.getText());
+		this.addResponse(resp);
+		return true;
 	}
 
 	public String toString() { // TODO
