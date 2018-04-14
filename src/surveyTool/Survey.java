@@ -25,6 +25,14 @@ public class Survey {
 		this.author = author;
 		this.isAnonymous = isAnonymous;
 	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
 
 	// returns an ArrayList of questions in the survey
 	public ArrayList<Question> getQuestions() {
