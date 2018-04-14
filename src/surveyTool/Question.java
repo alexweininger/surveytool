@@ -30,7 +30,7 @@ public class Question implements Display {
 	}
 
 	public String getName() { // get the name of the question
-		return null;
+		return this.name;
 	}
 
 	public int getId() { // get the id of the question
@@ -38,34 +38,34 @@ public class Question implements Display {
 	}
 
 	public void setText(String text) { // set the question text of the question
-		// set text
+		this.questionText = text;
 	}
 
 	public String getText() {
-		return null;
+		return this.questionText;
 	}
 
-	public void addResponse(String response) {
-		// add the String to the end of the responses list
+	public void addResponse(String response) {  // add the String to the end of the responses list
+		this.responses.add(response);
 	}
 
 	public void setResponses(ArrayList<String> responses) {
-		// stub
+		this.responses = responses;
 	}
 
 	public ArrayList<String> getResponses() {
-		return null;
+		return this.responses;
 	}
 
-	public boolean isValidResponse(String response) {
+	public boolean isValidResponse(String response) { // TODO
 		return true;
 	}
 
-	public String displayQuestion() {
+	public String displayQuestion() { // TODO
 		return null;
 	}
 
-	public String toString() {
-		return null;
+	public String toString() { // TODO
+		return "Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
 	}
 }
