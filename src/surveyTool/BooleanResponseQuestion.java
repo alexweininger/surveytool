@@ -1,5 +1,6 @@
 /**
- * BooleanResponseQuestion.java - Extends OptionResponseQuestion, making a true of false question easier to create.
+ * BooleanResponseQuestion.java 
+ * --Extends OptionResponseQuestion, making a true of false question easier to create.
  * 
  * @author Alex Weininger and Niraj Mali
  * @version 4/10/2018
@@ -11,7 +12,8 @@ import java.util.Arrays;
 
 public class BooleanResponseQuestion extends OptionResponseQuestion implements Display {
 
-	static ArrayList<String> options = new ArrayList<String>(Arrays.asList("true", "false")); // make an ArrayList of String containing "true" and "false"
+	// make an ArrayList of String containing "true" and "false"
+	static ArrayList<String> options = new ArrayList<String>(Arrays.asList("true", "false")); 
 
 	// constructor
 	public BooleanResponseQuestion(String name, String questionText) {
