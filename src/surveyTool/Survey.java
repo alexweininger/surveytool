@@ -117,28 +117,8 @@ public class Survey {
 			Question q = this.questions.get(i);
 			q.displayQuestion();
 		}
-		this.displayResults();
+		//this.displayResults();
 	}
-	
-//	public void displaySurvey() {
-//		FlowLayout flow = new FlowLayout();
-//		JFrame frame = new JFrame(this.name);
-//		frame.setLayout(flow);
-//		
-//		Dimension d = new Dimension(600, 300);
-//		
-//		frame.setSize(d);
-//		
-//		for(int i = 0; i < this.questions.size(); i++) {
-//
-//			Question q = this.questions.get(i);
-//			
-//			boolean x = q.displayQuestion(frame);
-//			
-//			frame.setVisible(true);
-//		}
-//		//this.displayResults();
-//	}
 
 	public String toString() {
 		return "Survey [name=" + name + ", author=" + author + ", questions=" + questions + ", isAnonymous=" + isAnonymous + ", getQuestions()=" + getQuestions() + "]";

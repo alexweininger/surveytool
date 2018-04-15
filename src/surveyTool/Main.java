@@ -6,6 +6,8 @@
  */
 package surveyTool;
 
+import java.util.ArrayList;
+
 public class Main {
 	public static void main(String[] args) {	//Main method to execute and test survey
 		
@@ -16,6 +18,14 @@ public class Main {
 		
 		Question city = new Question("city question", "What city do you live in?");
 		survey.addQuestion(city);
+		
+		ArrayList<String> colors = new ArrayList<String>();
+		colors.add("green");
+		colors.add("red");
+		colors.add("blue");
+		
+		Question color = new OptionResponseQuestion("color", "What is your favorite color?", colors);
+		survey.addQuestion(color);
 		
 		survey.displaySurvey(); // runs one instance of the survey
 		survey.displaySurvey();

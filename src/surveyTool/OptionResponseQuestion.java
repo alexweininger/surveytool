@@ -9,6 +9,10 @@ package surveyTool;
 
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+import javax.swing.JList;
+import javax.swing.JPanel;
+
 public class OptionResponseQuestion extends ListResponseQuestion implements Display {
 	
 	// constructors
@@ -21,16 +25,23 @@ public class OptionResponseQuestion extends ListResponseQuestion implements Disp
 	}
 
 	public boolean isValidResponse(String resp) { // is the user response valid, returns boolean
-		for(int i = 0; i < ; i++) {
+	/*	for(int i = 0; i < ; i++) {
 			if(resp == options.get(i)) {
 				return true;
 			}
-		}
+		}*/
 		return false;
 	}
 
-	public String displayQuestion() { // display the question in JPanel
-		return null;
+	public boolean displayQuestion() { // display the question in JPanel
+		JFrame frame = new JFrame();
+		String[] a = new String[this.getOptions().size()];
+		JList<String> list = new JList<String>(this.getOptions().toArray(a));
+		
+		frame.add(list);
+		frame.setVisible(true);
+		
+		return false; 
 	}
 
 	public String toString() { // toString

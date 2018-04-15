@@ -7,6 +7,8 @@
 
 package surveyTool;
 
+import javax.swing.JOptionPane;
+
 public class TextResponseQuestion extends Question implements Display {
 
 	private int charLimit = 2000; // character limit of the user input (default is 2000)
@@ -31,11 +33,16 @@ public class TextResponseQuestion extends Question implements Display {
 	}
 
 	public boolean isValidResponse(String resp) { // check if the response is valid, e.g. if it is under the character limit
+		if(resp.length() > 2000) {
+			return false;
+		}
 		return true;
 	}
 
-	public String displayQuestion() { // display the question with JPanel
-		return null;
+	public boolean displayQuestion() { // display the question with JPanel
+		String resp = JOptionPane.showInputDialog(null, this.getText());
+		this.addResponse(resp);
+		return isValidResponse(resp);
 	}
 
 	public String toString() { // toString

@@ -84,8 +84,8 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 * --Parameters: none --Returns: String --Required by implemented interface
 	 * --Prints question to consoler, possibly JFrame if integrated into program
 	 */
-	public String displayQuestion() {
-		return super.getText();
+	public boolean displayQuestion() {
+		return false;
 	}
 	
 	public String toString() {

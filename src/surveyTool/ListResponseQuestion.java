@@ -60,8 +60,8 @@ public class ListResponseQuestion extends Question implements Display {
 		return true;
 	}
 
-	public String displayQuestion() { // display this question in JPanel
-		return null;
+	public boolean displayQuestion() { // display this question in JPanel
+		return false;
 	}
 
 	public String toString() { // toString
