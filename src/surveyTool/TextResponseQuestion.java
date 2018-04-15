@@ -7,6 +7,8 @@
 
 package surveyTool;
 
+import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 
 public class TextResponseQuestion extends Question implements Display {
@@ -40,9 +42,7 @@ public class TextResponseQuestion extends Question implements Display {
 	}
 
 	public boolean displayQuestion() { // display the question with JPanel
-		String resp = JOptionPane.showInputDialog(null, this.getText());
-		this.addResponse(resp);
-		return isValidResponse(resp);
+		return super.displayQuestion();
 	}
 
 	public String toString() { // toString

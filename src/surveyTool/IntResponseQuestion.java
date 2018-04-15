@@ -12,6 +12,7 @@
 package surveyTool;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class IntResponseQuestion extends TextResponseQuestion implements Display {
 
@@ -70,10 +71,11 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 */
 
 	public boolean isValidResponse(int resp) {
-		if(resp >= 0 && resp < range.length) {
+		if(resp >= range[0] && resp <= range[1]) {
 			return true;
 		}
 		else {
+			System.out.println("Your response is outside the valid range of " + this.range[0] + " to " + this.range[1]);
 			return false;
 		}
 	}
@@ -85,7 +87,10 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 * --Prints question to consoler, possibly JFrame if integrated into program
 	 */
 	public boolean displayQuestion() {
-		return false;
+		Scanner kb = new Scanner(System.in);
+		System.out.print(this.getText());
+		int resp = kb.nextInt();
+		return this.isValidResponse(resp);
 	}
 	
 	public String toString() {

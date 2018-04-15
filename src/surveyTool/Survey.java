@@ -109,13 +109,16 @@ public class Survey {
 		this.displayResults();
 	}
 	
-	public void displaySurvey() {
-
-		
-		for(int i = 0; i < this.questions.size(); i++) {
-
+	public void displaySurvey(int index) {
+		boolean valid = false;
+		int i = 0;
+		while(i < this.questions.size()) {
 			Question q = this.questions.get(i);
-			q.displayQuestion();
+			valid = q.displayQuestion();
+			
+			if(valid) {
+				i++;
+			}
 		}
 		//this.displayResults();
 	}

@@ -7,6 +7,7 @@
 package surveyTool;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import javax.swing.*;
 
@@ -68,11 +69,24 @@ public class Question implements Display {
 
 	//Required by interface to display question TODO
 	public boolean displayQuestion() {
+		Scanner kb = new Scanner(System.in);
 		
-		String resp = JOptionPane.showInputDialog(null, this.getText());
-		this.addResponse(resp);
-		return true;
+		System.out.println(this.getText());
+		String resp = kb.nextLine();
+		
+		if(this.isValidResponse(resp)) {
+			this.addResponse(resp);
+			return true;
+		}else {
+			return false;
+		}
 	}
+//	public boolean displayQuestion() {
+//		
+//		String resp = JOptionPane.showInputDialog(null, this.getText());
+//		this.addResponse(resp);
+//		return true;
+//	}
 
 	public String toString() { // TODO
 		//return " Question toString: Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
