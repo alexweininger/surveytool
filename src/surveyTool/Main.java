@@ -32,8 +32,11 @@ public class Main {
 		survey.addQuestion(age);
 		
 		
+		BooleanResponseQuestion math = new BooleanResponseQuestion("math", "Is 2 + 2 = 3?");
+		survey.addQuestion(math);
 
 		survey.displaySurvey(0); // runs one instance of the survey
+		survey.displaySurvey(0);
 		// survey.initSurvey();
 	}
 }

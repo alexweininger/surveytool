@@ -93,6 +93,10 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 		return this.isValidResponse(resp);
 	}
 	
+	public void displayResults() {
+		super.displayResults();
+	}
+	
 	public String toString() {
 		return super.toString() + "IntResponseQuestion [range=" + Arrays.toString(range) + "]";
 	}

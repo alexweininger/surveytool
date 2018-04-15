@@ -22,6 +22,7 @@ public class Question implements Display {
 	// constructors
 	public Question(String name) {
 		this.name = name;
+		id++;
 	}
 	
 	public Question(String name, String questionText) {
@@ -81,15 +82,16 @@ public class Question implements Display {
 			return false;
 		}
 	}
-//	public boolean displayQuestion() {
-//		
-//		String resp = JOptionPane.showInputDialog(null, this.getText());
-//		this.addResponse(resp);
-//		return true;
-//	}
 
-	public String toString() { // TODO
-		//return " Question toString: Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
-		return "Question toString";
+	public void displayResults() {
+		System.out.println("Responses for question: " + this.getName());
+		for (int i = 0; i < this.getResponses().size(); i++) {
+			System.out.println(this.getResponses().get(i));
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return "Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
 	}
 }

@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class BooleanResponseQuestion extends OptionResponseQuestion implements Display {
 
 	// make an ArrayList of String containing "true" and "false"
-	static ArrayList<String> options = new ArrayList<String>(Arrays.asList("true", "false")); 
+	static ArrayList<String> options = new ArrayList<String>(Arrays.asList("true", "false"));
 
 	// constructor
 	public BooleanResponseQuestion(String name, String questionText) {
@@ -22,16 +22,23 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 	}
 
 	public boolean isValidResponse(String resp) { // check if the user response if valid
-		if(resp.equalsIgnoreCase("true") || resp.equalsIgnoreCase("false")){
+		if (resp.equalsIgnoreCase("0") || resp.equalsIgnoreCase("1")) {
+			String response = (resp.equalsIgnoreCase("0")) ? "true" : "false";
+			this.addResponse(response);
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
 
-	public String displayQuestion() { // display the question in JPanel
-		return super.getText();
+	public boolean displayQuestion() { // display the question in console
+		return super.displayQuestion();	
+	}
+	
+	public void displayResults() { 
+		for(int i = 0; i < getResponses().size(); i++) {
+			System.out.println(this.getResponses().get(i));
+		}
 	}
 
 	public String toString() {

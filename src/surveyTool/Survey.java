@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.*;
+import javax.swing.plaf.synth.SynthSeparatorUI;
 
 public class Survey {
 	private String name = "";				//Name of survey taker
@@ -82,13 +83,10 @@ public class Survey {
 
 	// displays the results/data of the survey in the console
 	public void displayResults() {
-		String str = "";
 		for(int i = 0; i < this.questions.size(); i++) {
 			Question q = questions.get(i);
-			str+= q.getText() + "\nResponses:\n";
-			str+= q.getResponses().toString() + "\n";
+			q.displayResults();
 		}
-		System.out.println(str);
 	}
 
 	// takes in a question id, returns an ArrayList of the answers for that question
@@ -109,6 +107,7 @@ public class Survey {
 		this.displayResults();
 	}
 	
+	// display the survey in console
 	public void displaySurvey(int index) {
 		boolean valid = false;
 		int i = 0;
@@ -120,7 +119,8 @@ public class Survey {
 				i++;
 			}
 		}
-		//this.displayResults();
+		
+		this.displayResults();
 	}
 
 	public String toString() {

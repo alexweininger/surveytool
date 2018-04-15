@@ -6,8 +6,9 @@
  */
 
 package surveyTool;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.Scanner;
 // ex
 import java.awt.BorderLayout;
 import java.awt.Container;
@@ -23,7 +24,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-public class ListResponseQuestion extends Question implements Display, ActionListener{
+public class ListResponseQuestion extends Question implements Display, ActionListener {
 
 	private ArrayList<String> options; // list of options the user can select from
 	private ArrayList<String> responses; // list of responses the user selects and submits
@@ -34,14 +35,14 @@ public class ListResponseQuestion extends Question implements Display, ActionLis
 	public ListResponseQuestion(String name, String questionText) {
 		super(name, questionText);
 	}
-	
-	//Overloaded Constructor: adds responseLimit
+
+	// Overloaded Constructor: adds responseLimit
 	public ListResponseQuestion(String name, String questionText, int responseLimit) {
 		super(name, questionText);
 		this.responseLimit = responseLimit;
 	}
 
-	//Overloaded Constructor: adds options to questions
+	// Overloaded Constructor: adds options to questions
 	public ListResponseQuestion(String name, String questionText, int responseLimit, ArrayList<String> options) {
 		super(name, questionText);
 		this.responseLimit = responseLimit;
@@ -72,51 +73,48 @@ public class ListResponseQuestion extends Question implements Display, ActionLis
 		return this.responseLimit;
 	}
 
-	public boolean isValidResponse(ArrayList<String> resp) { // check if the response if valid
-		return true;
+	public boolean isValidResponse(String response) { // check if the response if valid
+		String[] answers = response.split(",\\s");
+		ArrayList<String> temp = new ArrayList<String>();
+		for (int i = 0; i < answers.length; i++) {
+			int n = 0;
+			try {
+				n = Integer.parseInt(answers[i]);
+				temp.add(options.get(n - 1));
+			} catch (NumberFormatException e) {
+				System.out.println("Please enter only numbers seperated by commas");
+				return false;
+			} catch (IndexOutOfBoundsException e) {
+				System.out.println("One of your responses is not an option");
+				return false;
+			}
+		}
+		if (temp.size() > responseLimit || responseLimit < 0) {
+			this.setResponses(temp);
+			return true;
+		}
+		return false;
 	}
 
 	public boolean displayQuestion() { // display this question in JPanel
-		
-		 String title = this.getName();
-		    JFrame frame = new JFrame(title);
-		    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		    JPanel panel = new JPanel(new GridLayout(0, 1));
-		    Border border = BorderFactory.createTitledBorder("Pizza Toppings");
-		    panel.setBorder(border);
-		    JCheckBox check = new JCheckBox("Anchovies");
-		    panel.add(check);
-		    check = new JCheckBox("Garlic");
-		    panel.add(check);
-		    check = new JCheckBox("Onions");
-		    panel.add(check);
-		    check = new JCheckBox("Pepperoni");
-		    panel.add(check);
-		    check = new JCheckBox("Spinach");
-		    panel.add(check);
-		    JButton button = new JButton("Submit");
-		    
-		    button.addActionListener(this);
-		    Container contentPane = frame.getContentPane();
-		    contentPane.add(panel, BorderLayout.CENTER);
-		    contentPane.add(button, BorderLayout.SOUTH);
-		    frame.setSize(300, 200);
-		    frame.setVisible(true);
-		    submitted = false;
-		    
-		    while(!submitted) {
-		    	System.out.print("");
-		    }
-		    
-		return true;
+		Scanner kb = new Scanner(System.in);
+		System.out.println(this.getText());
+		for (int i = 0; i < this.options.size(); i++) {
+			System.out.println(i + 1 + ". " + this.options.get(i));
+		}
+		System.out.println("Please respond with all numbers that apply, seperated with commas.");
+		String response = kb.nextLine();
+
+		return this.isValidResponse(response);
 	}
-	
-    public void actionPerformed(ActionEvent e) {
-       submitted = true;
-    }
-    
-	public String toString() { // toString
-		return null;
+
+	public void actionPerformed(ActionEvent e) {
+		submitted = true;
+	}
+
+	@Override
+	public String toString() {
+		return "ListResponseQuestion [options=" + options + ", responses=" + responses + ", responseLimit=" + responseLimit + ", submitted=" + submitted + "]";
 	}
 
 }

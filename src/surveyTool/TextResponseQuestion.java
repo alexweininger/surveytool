@@ -44,6 +44,10 @@ public class TextResponseQuestion extends Question implements Display {
 	public boolean displayQuestion() { // display the question with JPanel
 		return super.displayQuestion();
 	}
+	
+	public void displayResults() {
+		super.displayResults();
+	}
 
 	public String toString() { // toString
 		return null;
