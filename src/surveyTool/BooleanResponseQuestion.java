@@ -23,25 +23,31 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 
 	public boolean isValidResponse(String resp) { // check if the user response if valid
 		if (resp.equalsIgnoreCase("1") || resp.equalsIgnoreCase("2")) {
+			
 			System.out.println(resp);
+			
 			String response = (resp.equalsIgnoreCase("1")) ? "true" : "false";
-			super.addResponse(response);
+			
+			this.addResponse(response);
+			
 			System.out.println(response);
+			
 			return true;
+			
 		} else {
 			return false;
 		}
 	}
 
 	public boolean displayQuestion() { // display the question in console
-		return super.displayQuestion();	
+		return super.displayQuestion();
 	}
-	
+
 	public void displayResults() {
 		System.out.println("Results for boolean question: " + this.getText());
-		System.out.println(super.getResponses());
-		for(int i = 0; i < super.getResponses().size(); i++) {
-			System.out.println(super.getResponses().get(i));
+		System.out.println(this.responses);
+		for (int i = 0; i < this.getResponses().size(); i++) {
+			System.out.println(this.getResponses().get(i));
 		}
 	}
 

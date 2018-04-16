@@ -10,11 +10,10 @@ package surveyTool;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class ListResponseQuestion extends Question implements Display {
 
-	private ArrayList<String> options; // list of options the user can select from
-	private ArrayList<String> responses; // list of responses the user selects and submits
+	protected ArrayList<String> options; // list of options the user can select from
+	protected ArrayList<String> responses; // list of responses the user selects and submits
 	private int responseLimit = -1; // the amount of options the user is allowed to submit
 	private boolean submitted;
 
@@ -76,7 +75,7 @@ public class ListResponseQuestion extends Question implements Display {
 				return false;
 			}
 		}
-		if (temp.size() > responseLimit || responseLimit < 0) {
+		if (temp.size() < responseLimit || responseLimit > 0) {
 			this.setResponses(temp);
 			return true;
 		}
