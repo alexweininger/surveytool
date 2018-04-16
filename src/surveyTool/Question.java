@@ -51,7 +51,7 @@ public class Question implements Display {
 	}
 
 	public void addResponse(String response) {  // add the String to the end of the responses list
-		boolean add = this.responses.add(response);
+		this.responses.add(response);
 	}
 
 	public void setResponses(ArrayList<String> responses) {
@@ -85,8 +85,8 @@ public class Question implements Display {
 
 	public void displayResults() {
 		System.out.println("Responses for question: " + this.getName());
-		for (int i = 0; i < this.getResponses().size(); i++) {
-			System.out.println(this.getResponses().get(i));
+		for (int i = 0; i < this.responses.size(); i++) {
+			System.out.println(this.responses.get(i));
 		}
 	}
 	

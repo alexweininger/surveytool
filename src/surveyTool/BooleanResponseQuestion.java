@@ -28,7 +28,7 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 			
 			String response = (resp.equalsIgnoreCase("1")) ? "true" : "false";
 			
-			this.addResponse(response);
+			addResponse(response);
 			
 			System.out.println(response);
 			
@@ -45,9 +45,9 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 
 	public void displayResults() {
 		System.out.println("Results for boolean question: " + this.getText());
-		System.out.println(this.responses);
-		for (int i = 0; i < this.getResponses().size(); i++) {
-			System.out.println(this.getResponses().get(i));
+		System.out.println(responses);
+		for (int i = 0; i < responses.size(); i++) {
+			System.out.println(responses.get(i));
 		}
 	}
 

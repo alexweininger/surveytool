@@ -42,11 +42,7 @@ public class ListResponseQuestion extends Question implements Display {
 	public ArrayList<String> getOptions() { // get the list of options
 		return this.options;
 	}
-
-	public void setResponses(ArrayList<String> responses) { // set the list of responses
-		this.responses = responses;
-	}
-
+	
 	public ArrayList<String> getResponses() { // get the list of responses
 		return this.responses;
 	}
@@ -90,7 +86,6 @@ public class ListResponseQuestion extends Question implements Display {
 		}
 		System.out.println("Please respond with all numbers that apply, seperated with commas.");
 		String response = kb.nextLine();
-
 		return this.isValidResponse(response);
 	}
 
