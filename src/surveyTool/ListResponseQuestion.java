@@ -75,7 +75,7 @@ public class ListResponseQuestion extends Question implements Display {
 				return false;
 			}
 		}
-		if (temp.size() < responseLimit || responseLimit > 0) {
+		if (temp.size() < responseLimit || responseLimit < 0) {
 			this.setResponses(temp);
 			return true;
 		}
