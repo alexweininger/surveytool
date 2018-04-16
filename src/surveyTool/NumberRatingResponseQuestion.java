@@ -49,8 +49,12 @@ public class NumberRatingResponseQuestion extends OptionResponseQuestion impleme
 		return this.range;
 	}
 
-	public String displayQuestion() { // display this question in JPanel
-		return super.getText();
+	public boolean displayQuestion() { // display this question in the console
+		return super.displayQuestion(); // TODO
+	}
+	
+	public void displayResults() {
+		//TODO
 	}
 
 	public String toString() {

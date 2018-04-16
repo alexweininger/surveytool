@@ -9,22 +9,9 @@ package surveyTool;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-// ex
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.Border;
 
-public class ListResponseQuestion extends Question implements Display, ActionListener {
+public class ListResponseQuestion extends Question implements Display {
 
 	private ArrayList<String> options; // list of options the user can select from
 	private ArrayList<String> responses; // list of responses the user selects and submits
@@ -108,11 +95,6 @@ public class ListResponseQuestion extends Question implements Display, ActionLis
 		return this.isValidResponse(response);
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		submitted = true;
-	}
-
-	@Override
 	public String toString() {
 		return "ListResponseQuestion [options=" + options + ", responses=" + responses + ", responseLimit=" + responseLimit + ", submitted=" + submitted + "]";
 	}

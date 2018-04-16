@@ -22,9 +22,11 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 	}
 
 	public boolean isValidResponse(String resp) { // check if the user response if valid
-		if (resp.equalsIgnoreCase("0") || resp.equalsIgnoreCase("1")) {
-			String response = (resp.equalsIgnoreCase("0")) ? "true" : "false";
-			this.addResponse(response);
+		if (resp.equalsIgnoreCase("1") || resp.equalsIgnoreCase("2")) {
+			System.out.println(resp);
+			String response = (resp.equalsIgnoreCase("1")) ? "true" : "false";
+			super.addResponse(response);
+			System.out.println(response);
 			return true;
 		} else {
 			return false;
@@ -35,9 +37,11 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 		return super.displayQuestion();	
 	}
 	
-	public void displayResults() { 
-		for(int i = 0; i < getResponses().size(); i++) {
-			System.out.println(this.getResponses().get(i));
+	public void displayResults() {
+		System.out.println("Results for boolean question: " + this.getText());
+		System.out.println(super.getResponses());
+		for(int i = 0; i < super.getResponses().size(); i++) {
+			System.out.println(super.getResponses().get(i));
 		}
 	}
 

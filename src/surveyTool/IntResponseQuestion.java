@@ -98,7 +98,7 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	}
 	
 	public String toString() {
-		return super.toString() + "IntResponseQuestion [range=" + Arrays.toString(range) + "]";
+		return "IntResponseQuestion [range=" + Arrays.toString(range) + ", getResponses()=" + getResponses() + "]";
 	}
 
 

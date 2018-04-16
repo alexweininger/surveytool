@@ -33,7 +33,7 @@ public class OptionResponseQuestion extends ListResponseQuestion implements Disp
 	}
 
 	public String toString() { // toString
-		return null;
+		return super.toString();
 	}
 
 }
