@@ -31,6 +31,7 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 			addResponse(response);
 			
 			System.out.println(response);
+			System.out.println(this.toString());
 			
 			return true;
 			
@@ -45,9 +46,8 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 
 	public void displayResults() {
 		System.out.println("Results for boolean question: " + this.getText());
-		System.out.println(responses);
-		for (int i = 0; i < responses.size(); i++) {
-			System.out.println(responses.get(i));
+		for (int i = 0; i < getResponses().size(); i++) {
+			System.out.println(getResponses().get(i));
 		}
 	}
 

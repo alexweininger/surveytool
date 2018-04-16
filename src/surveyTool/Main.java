@@ -23,10 +23,7 @@ public class Main {
 		colors.add("green");
 		colors.add("red");
 		colors.add("blue");
-		
-		ListResponseQuestion color = new ListResponseQuestion("color", "Fave color?", -1, colors);
-		survey.addQuestion(color);
-		
+
 		int[] range = {0, 130};
 		IntResponseQuestion age = new IntResponseQuestion("age", "How old are you?", range);
 		survey.addQuestion(age);

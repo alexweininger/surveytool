@@ -13,15 +13,24 @@ import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JPanel;
 
-public class OptionResponseQuestion extends ListResponseQuestion implements Display {
-	
+public class OptionResponseQuestion extends Question implements Display {
+	protected ArrayList<String> options; // list of options the user can select from
 	// constructors
 	public OptionResponseQuestion(String name, String questionText) {
-		super(name, questionText, 1); // set the response limit to 1 by default
+		super(name, questionText); // set the response limit to 1 by default
 	}
 
 	public OptionResponseQuestion(String name, String questionText, ArrayList<String> options) {
-		super(name, questionText, 1, options); // set the response limit to 1 by default
+		super(name, questionText);
+		this.options = options; 
+	}
+	
+	public void setOptions(ArrayList<String> options) { // set the list of options
+		this.options = options;
+	}
+
+	public ArrayList<String> getOptions() { // get the list of options
+		return this.options;
 	}
 
 	public boolean isValidResponse(String resp) { // is the user response valid, returns boolean
