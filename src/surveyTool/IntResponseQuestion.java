@@ -101,6 +101,7 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 				isInt = false;
 			}
 		}while(!(isInt));
+		
 		return this.isValidResponse(resp);
 	}
 	
