@@ -87,9 +87,20 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 * --Prints question to consoler, possibly JFrame if integrated into program
 	 */
 	public boolean displayQuestion() {
-		Scanner kb = new Scanner(System.in);
-		System.out.print(this.getText());
-		int resp = kb.nextInt();
+		boolean isInt = true;
+		int resp = 0;
+		do {
+			try {
+				System.out.print(this.getText());
+				Scanner kb = new Scanner(System.in);
+				isInt = true;
+				resp = kb.nextInt();
+			}
+			catch(Exception e) {
+				System.out.println("Please enter an integer value only");
+				isInt = false;
+			}
+		}while(!(isInt));
 		return this.isValidResponse(resp);
 	}
 	

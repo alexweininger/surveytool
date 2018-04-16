@@ -9,6 +9,10 @@ package surveyTool;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.*;
+
+import java.awt.*;
+
 public class Question implements Display {
 	private String name = ""; // name of the question
 	private int id = -1; // based on number of questions already in survey
@@ -20,7 +24,7 @@ public class Question implements Display {
 		this.name = name;
 		id++;
 	}
-
+	
 	public Question(String name, String questionText) {
 		this.name = name;
 		this.questionText = questionText;
@@ -46,7 +50,7 @@ public class Question implements Display {
 		return this.questionText;
 	}
 
-	public void addResponse(String response) { // add the String to the end of the responses list
+	public void addResponse(String response) {  // add the String to the end of the responses list
 		this.responses.add(response);
 	}
 
@@ -54,27 +58,27 @@ public class Question implements Display {
 		this.responses = responses;
 	}
 
-	// Return responses to questions
+	//Return responses to questions
 	public ArrayList<String> getResponses() {
 		return this.responses;
 	}
 
-	// Validates response(range, data type, etc.)
+	//Validates response(range, data type, etc.)
 	public boolean isValidResponse(String response) {
 		return true;
 	}
 
-	// Required by interface to display question TODO
+	//Required by interface to display question TODO
 	public boolean displayQuestion() {
 		Scanner kb = new Scanner(System.in);
-
+		
 		System.out.println(this.getText());
 		String resp = kb.nextLine();
-
-		if (this.isValidResponse(resp)) {
+		
+		if(this.isValidResponse(resp)) {
 			this.addResponse(resp);
 			return true;
-		} else {
+		}else {
 			return false;
 		}
 	}
@@ -85,8 +89,7 @@ public class Question implements Display {
 			System.out.println(this.responses.get(i));
 		}
 	}
-
-	@Override
+	
 	public String toString() {
 		return "Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
 	}
