@@ -19,15 +19,20 @@ public class Question implements Display {
 	private String questionText = ""; // the question
 	private ArrayList<String> responses = new ArrayList<String>(); // list of user responses to the question
 
+	private static int nextId = 1;
+
 	// constructors
 	public Question(String name) {
 		this.name = name;
-		id++;
+		this.id = nextId;
+		nextId++;
 	}
 	
 	public Question(String name, String questionText) {
 		this.name = name;
 		this.questionText = questionText;
+		this.id = nextId;
+		nextId++;
 	}
 
 	public void setName(String name) { // set the name of the question
@@ -58,14 +63,8 @@ public class Question implements Display {
 		this.responses = responses;
 	}
 
-	//Return responses to questions
-	public ArrayList<String> getResponses() {
+	public ArrayList<String> getResponses() { //Return responses to questions
 		return this.responses;
-	}
-
-	//Validates response(range, data type, etc.)
-	public boolean isValidResponse(String response) {
-		return true;
 	}
 
 	//Required by interface to display question TODO
@@ -75,15 +74,7 @@ public class Question implements Display {
 		str += "Please respond to this question in one line on one line, press enter to submit."
 		System.out.println(str);
 
-		String resp = kb.nextLine();
-		
-		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
-			this.addResponse(resp);
-			System.out.println("INFO: Question.displayQuestion - added response: " + resp + " to the response list.");
-			return true;
-		} else {
-			return false;
-		}
+		String resp = kb.nextLine(); // we do not validate this response as anything can be taken for a response to just a question
 	}
 
 	public void displayResults() { // print the results to the console
