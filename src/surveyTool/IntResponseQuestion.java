@@ -25,8 +25,8 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 * question being asked) --Same as super in this case
 	 */
 
-	public IntResponseQuestion(String name, String qText) {
-		super(name, qText);
+	public IntResponseQuestion(String name, String questionText) {
+		super(name, questionText);
 	}
 
 	/*
@@ -37,8 +37,8 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 * int[] range variable
 	 **/
 
-	public IntResponseQuestion(String name, String qText, int[] range) {
-		super(name, qText);
+	public IntResponseQuestion(String name, String questionText, int[] range) {
+		super(name, questionText);
 		this.range = range;
 	}
 
@@ -70,11 +70,10 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 * --Checks if user has given a valid response(in range, integer, etc.)
 	 */
 
-	public boolean isValidResponse(int resp) {
-		if(resp >= range[0] && resp <= range[1]) {
+	public boolean isValidResponse(int response) {
+		if(response >= range[0] && response <= range[1]) {
 			return true;
-		}
-		else {
+		} else {
 			System.out.println("Your response is outside the valid range of " + this.range[0] + " to " + this.range[1]);
 			return false;
 		}
@@ -83,35 +82,44 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	/*
 	 * displayQuestion Method Description:
 	 * 
-	 * --Parameters: none --Returns: String --Required by implemented interface
-	 * --Prints question to consoler, possibly JFrame if integrated into program
+	 * --Parameters: none --Returns: boolean --Required by implemented interface
+	 * --Prints question to consoler
 	 */
-	public boolean displayQuestion() {
+	public boolean displayQuestion() { // TODO 
 		boolean isInt = true;
-		int resp = 0;
+		int response = 0;
+		Scanner kb = new Scanner(System.in); // moved out of the do and try blocks, move back into the try block if this breaks
 		do {
 			try {
-				System.out.print(this.getText());
-				Scanner kb = new Scanner(System.in);
+				String str = this.getId() + ". " + this.getText() + "\n";
+				str += "Please respone with an integer.\n";
+				System.out.println(str);
 				isInt = true;
-				resp = kb.nextInt();
+				response = kb.nextInt();
 			}
 			catch(Exception e) {
-				System.out.println("Please enter an integer value only");
+				System.out.println("Please enter an integer value only.");
+				System.out.println("INFO: " + e);
 				isInt = false;
 			}
-		}while(!(isInt));
+		}while(!(isInt)); // NIRAJ: Have you tested this? Does it crash if I enter a String?
 		
-		return this.isValidResponse(resp);
+		return this.isValidResponse(response);
 	}
 	
-	public void displayResults() {
+	public void displayResults() { // display the results in the console
 		super.displayResults();
 	}
 	
-	public String toString() {
-		return "IntResponseQuestion [range=" + Arrays.toString(range) + ", getResponses()=" + getResponses() + "]";
+	public String toString() { // IntResponse toString()
+		String str = "";
+		str += "| ------ IntResponse toString() -------\n"
+		str += "| name: " + this.getName() + "\n";
+		str += "| id: " + this.getId() + "\n";
+		str += "| questionText: " + this.getText() + "\n";
+		str += "| range: " + this.getRange() + "\n";
+		str += "| responses: " + this.getResponses() + "\n";
+		str += "| --------------------------------------\n"
+		return str;
 	}
-
-
 }
