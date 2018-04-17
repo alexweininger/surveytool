@@ -1,12 +1,12 @@
 /**
- * NumberResponseQuestion Class Description: 
+ * IntResponseQuestion Class Description: 
  * --For a question that takes an integer as a response, 
  * --Implements Display interface, Inherits Question class
  * 
  * TODO cast to String because all other questions are String?
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/10/2018
+ * @version 4/17/2018
  */
 
 package surveyTool;
