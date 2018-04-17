@@ -28,7 +28,10 @@ public class Main {
 		IntResponseQuestion age = new IntResponseQuestion("age", "How old are you?", range);
 		survey.addQuestion(age);
 		
-		
+		// what happens if we make this an instance of the OptionsResponse class and assign it to a BooleanResponse
+		// OptionResponseQuestion math2 = new BooleanResponseQuestion("math2", "Is 3 + 2 = 5?");
+		// WAIT it will work if we make it of type Question, like so:
+		// Question math3 = new BooleanResponseQuestion("math3", "Is 5 + 3 = 8?");
 		BooleanResponseQuestion math = new BooleanResponseQuestion("math", "Is 2 + 2 = 3?");
 		survey.addQuestion(math);
 
