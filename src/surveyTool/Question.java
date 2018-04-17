@@ -9,11 +9,8 @@ package surveyTool;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.swing.*;
-
-import java.awt.*;
-
 public class Question implements Display {
+
 	private String name = ""; // name of the question
 	private int id = -1; // based on number of questions already in survey
 	private String questionText = ""; // the question
@@ -66,7 +63,6 @@ public class Question implements Display {
 	public ArrayList<String> getResponses() { //Return responses to questions
 		return this.responses;
 	}
-
 
 	public boolean displayQuestion() { 	// required by interface to display question TODO
 		Scanner kb = new Scanner(System.in);

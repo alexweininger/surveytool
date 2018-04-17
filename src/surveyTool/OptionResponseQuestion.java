@@ -9,10 +9,6 @@ package surveyTool;
 
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-import javax.swing.JList;
-import javax.swing.JPanel;
-
 public class OptionResponseQuestion extends Question implements Display {
 	protected ArrayList<String> options; // list of options the user can select from
 

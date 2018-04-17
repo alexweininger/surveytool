@@ -6,8 +6,6 @@
  */
 package surveyTool;
 
-import javax.swing.JFrame;
-
 interface Display {
 	public boolean displayQuestion(); // return boolean which represents if the response was valid (if not repeat the question)
 	public void displayResults(); // displays the results or the data in the console
