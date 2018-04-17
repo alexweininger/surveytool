@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Main {
 	public static void main(String[] args) { // Main method to execute and test survey
 
-		Survey survey = new Survey("Survey Test", "Alex", true);
+		Survey survey = new Survey("Survey Test", "Alex");
 
 		Question name = new Question("name question", "What is your name?");
 		survey.addQuestion(name);

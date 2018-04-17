@@ -2,7 +2,7 @@
  * Survey.java - Class for creating, editing, and controlling the filling out of a survey.
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/10/2018
+ * @version 4/17/2018
  */
 package surveyTool;
 
@@ -14,7 +14,6 @@ public class Survey {
 	private String name = "";				//Name of survey taker
 	private String author = "";				//Name of author
 	private ArrayList<Question> questions = new ArrayList<Question>(); // array list of the questions in the survey
-	private boolean isAnonymous = true;		//If surveyor would like to be anonymous 
 
 	// constructors
 	public Survey(String name) {
@@ -24,10 +23,9 @@ public class Survey {
 	/*Constructor that overloads;
 	 * Adds author's name and if surveyor would like to be anonymous
 	 */
-	public Survey(String name, String author, boolean isAnonymous) {
+	public Survey(String name, String author) {
 		this.name = name;
 		this.author = author;
-		this.isAnonymous = isAnonymous;
 	}
 	
 	public void setName(String name) { // set name
