@@ -47,7 +47,24 @@ public class OptionResponseQuestion extends Question implements Display {
 	}
 
 	public boolean displayQuestion() { // display the question in the console and return if it is valid
-		return true;
+		Scanner kb = new Scanner(System.in);
+		String str = this.getId() + ". " + this.getText() + "\n";
+		str += "--- choose the best answer ---\n"
+		for(int i = 0; i < this.getOptions(); i++) {
+			str += i + 2 + ". " + this.getOptions().get(i) + "\n";
+		}
+		str += "--- Please respond to this question with the corresponding option number. ---";
+		System.out.println(str);
+
+		String resp = kb.nextLine();
+		
+		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
+			this.addResponse(resp);
+			return true;
+		} else {
+			return false;
+		}
+	}
 	}
 
 	public void displayResults() {
