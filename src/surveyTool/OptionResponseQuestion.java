@@ -67,7 +67,7 @@ public class OptionResponseQuestion extends Question implements Display {
 	}
 	}
 
-	public void displayResults() {
+	public void displayResults() { // displays the OptionResponse results in the console
 		System.out.println("|--- OptionResponse: " + this.getName() + " ---|");
 		System.out.println("| questionText: " + this.getText() + "\n");
 		System.out.println("| options: " + this.getResponses() + "\n");
@@ -78,7 +78,7 @@ public class OptionResponseQuestion extends Question implements Display {
 		System.out.println("|----------------------------------------|");
 	}
 
-	public String toString() { // toString
+	public String toString() { // OptionResponse toString()
 		String str = "";
 		str += "| ------ OptionResponse toString() -------\n"
 		str += "| name: " + this.getName() + "\n";
