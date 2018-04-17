@@ -71,26 +71,38 @@ public class Question implements Display {
 	//Required by interface to display question TODO
 	public boolean displayQuestion() {
 		Scanner kb = new Scanner(System.in);
-		
-		System.out.println(this.getText());
+		String str = this.getId() + ". " + this.getText() + "\n";
+		Str += "Please respond to this question in one line on one line, press enter to submit."
+		System.out.println(str);
+
 		String resp = kb.nextLine();
 		
-		if(this.isValidResponse(resp)) {
+		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
 			this.addResponse(resp);
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
 
-	public void displayResults() {
-		System.out.println("Responses for question: " + this.getName());
-		for (int i = 0; i < this.responses.size(); i++) {
-			System.out.println(this.responses.get(i));
-		}
+	public void displayResults() { // print the results to the console
+		System.out.println("|--- Question: " + this.getName() + " ---|");
+		System.out.println("| questionText: " + this.getText() + "\n");
+		System.out.println("| responses: " + this.getResponses() + "\n");
+		// for (int i = 0; i < this.responses.size(); i++) {
+		// 	System.out.println(this.responses.get(i));
+		// }
+		System.out.println("|----------------------------------------|");
 	}
 	
-	public String toString() {
-		return "Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
+	public String toString() { // Question toString()
+		String str = "";
+		str += "| ------ Question toString() -------\n"
+		str += "| name: " + this.getName() + "\n";
+		str += "| id: " + this.getId() + "\n";
+		str += "| questionText: " + this.getText() + "\n";
+		str += "| responses: " + this.getResponses() + "\n";
+		str += "| ----------------------------------\n"
+		return str;
 	}
 }
