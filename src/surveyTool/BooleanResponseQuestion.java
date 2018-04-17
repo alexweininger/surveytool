@@ -18,7 +18,6 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 
 	// constructor
 	public BooleanResponseQuestion(String name, String questionText) {
-
 		super(name, questionText, options);
 	}
 
@@ -53,6 +52,7 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 		
 		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
 			this.addResponse(resp);
+			System.out.println("INFO: BooleanResponse.displayQuestion - added response: " + resp + " to the response list.");
 			return true;
 		} else {
 			return false;

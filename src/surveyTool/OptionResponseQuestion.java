@@ -60,6 +60,7 @@ public class OptionResponseQuestion extends Question implements Display {
 		
 		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
 			this.addResponse(resp);
+			System.out.println("INFO: OptionResponse.displayQuestion - added response: " + resp + " to the response list.");
 			return true;
 		} else {
 			return false;
