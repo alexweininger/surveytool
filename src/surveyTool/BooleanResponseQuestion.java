@@ -43,8 +43,21 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 		return super.isValidResponse(response); // new
 	}
 
-	public boolean displayQuestion() { // display the question in console
-		return true;
+	public boolean displayQuestion() { // display the question in console and get the users response, validate it, and add it to the responses list
+		Scanner kb = new Scanner(System.in);
+		String str = this.getId() + ". " + this.getText() + "\n";
+		str += "Please respond to this question with 1 for true, or 2 for false";
+		System.out.println(str);
+
+		String resp = kb.nextLine();
+		
+		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
+			this.addResponse(resp);
+			return true;
+		} else {
+			return false;
+		}
+	}
 	}
 
 	public void displayResults() { // display the results in console

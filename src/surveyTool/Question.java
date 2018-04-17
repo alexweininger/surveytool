@@ -72,7 +72,7 @@ public class Question implements Display {
 	public boolean displayQuestion() {
 		Scanner kb = new Scanner(System.in);
 		String str = this.getId() + ". " + this.getText() + "\n";
-		Str += "Please respond to this question in one line on one line, press enter to submit."
+		str += "Please respond to this question in one line on one line, press enter to submit."
 		System.out.println(str);
 
 		String resp = kb.nextLine();
