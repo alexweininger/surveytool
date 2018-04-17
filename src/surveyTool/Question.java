@@ -67,8 +67,8 @@ public class Question implements Display {
 		return this.responses;
 	}
 
-	//Required by interface to display question TODO
-	public boolean displayQuestion() {
+
+	public boolean displayQuestion() { 	// required by interface to display question TODO
 		Scanner kb = new Scanner(System.in);
 		String str = this.getId() + ". " + this.getText() + "\n";
 		str += "Please respond to this question in one line on one line, press enter to submit."
