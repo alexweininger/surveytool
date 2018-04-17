@@ -1,23 +1,19 @@
 /**
- * LongAnswerQuestion.java - class to represent a text response of practically unlimited length
+ * TextResponseQuestion.java - class to represent a text response of practically unlimited length
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/10/2018
+ * @version 4/17/2018
  */
 
 package surveyTool;
-
-import java.util.Scanner;
-
-import javax.swing.JOptionPane;
 
 public class TextResponseQuestion extends Question implements Display {
 
 	private int charLimit = 2000; // character limit of the user input (default is 2000)
 
 	// constructors
-	public TextResponseQuestion(String name, String qText) {
-		super(name, qText);
+	public TextResponseQuestion(String name, String questionText) {
+		super(name, questionText);
 	}
 
 	// Overloaded constructor: adds limit to characters typed in text
@@ -34,22 +30,29 @@ public class TextResponseQuestion extends Question implements Display {
 		return this.charLimit;
 	}
 
-	public boolean isValidResponse(String resp) { // check if the response is valid, e.g. if it is under the character limit
-		if(resp.length() > 2000) {
+	public boolean isValidResponse(String response) { // check if the response is valid, e.g. if it is under the character limit
+		if(response.length() > 2000) {
 			return false;
 		}
 		return true;
 	}
 
-	public boolean displayQuestion() { // display the question with JPanel
+	public boolean displayQuestion() { // display the question in the console
 		return super.displayQuestion();
 	}
 	
-	public void displayResults() {
+	public void displayResults() { // display the results in the console
 		super.displayResults();
 	}
 
-	public String toString() { // toString
-		return null;
+	public String toString() { // TextResponse toString()
+		String str = "";
+		str += "| ------ TextResponse toString() -------\n"
+		str += "| name: " + this.getName() + "\n";
+		str += "| id: " + this.getId() + "\n";
+		str += "| questionText: " + this.getText() + "\n";
+		str += "| responses: " + this.getResponses() + "\n";
+		str += "| ----------------------------------------\n"
+		return str;
 	}
 }

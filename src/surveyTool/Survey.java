@@ -6,15 +6,11 @@
  */
 package surveyTool;
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.swing.*;
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 public class Survey {
+
 	private String name = "";				//Name of survey taker
 	private String author = "";				//Name of author
 	private ArrayList<Question> questions = new ArrayList<Question>(); // array list of the questions in the survey
@@ -41,14 +37,6 @@ public class Survey {
 	public String getName() { // get name
 		return this.name;
 	}
-	
-//	public void setFrame(JFrame frame) {
-//		this.frame = frame;
-//	}
-//	
-//	public JFrame getFrame() {
-//		return this.frame;
-//	}
 
 	// returns an ArrayList of questions in the survey
 	public ArrayList<Question> getQuestions() {
@@ -75,8 +63,7 @@ public class Survey {
 		String str = "";
 		for(int i = 0; i < this.questions.size(); i++) {
 			Question q = questions.get(i);
-			str+= q.getText() + "\nResponses:\n";
-			str+= q.getResponses().toString() + "\n";
+			str += q.displayResults();
 		}
 		return str;
 	}
@@ -94,19 +81,6 @@ public class Survey {
 		return this.questions.get(questionId).getResponses();
 	}
 	
-	// runs one instance of the survey, to fill out multiple responses to a survey you need to run initSurvey more than once
-	public void initSurvey() {
-		Scanner kb = new Scanner(System.in);
-		this.toString();
-		for(int i = 0; i < this.questions.size(); i++) {
-			Question q = this.questions.get(i);
-			System.out.println(q.getText());
-			String resp = kb.nextLine();
-			q.addResponse(resp);
-		}
-		this.displayResults();
-	}
-	
 	// display the survey in console
 	public void displaySurvey(int index) {
 		boolean valid = false;
@@ -115,12 +89,10 @@ public class Survey {
 			Question q = this.questions.get(i);
 			valid = q.displayQuestion();
 			
-			if(valid) {
+			if(valid) { // if the response is not valid, do not move to the next question
 				i++;
 			}
 		}
-		
-		this.displayResults();
 	}
 
 	public String toString() {

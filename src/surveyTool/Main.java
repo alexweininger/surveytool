@@ -1,8 +1,8 @@
 /**
- * Main class to test and create a survey
+ * Main class to test and create the survey class, and add question objects to a survey.
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/10/2018
+ * @version 4/17/2018
  */
 package surveyTool;
 
@@ -37,6 +37,7 @@ public class Main {
 
 		survey.displaySurvey(0); // runs one instance of the survey
 		survey.displaySurvey(0);
-		// survey.initSurvey();
+
+		survey.displayResults(); // display the survey results
 	}
 }
