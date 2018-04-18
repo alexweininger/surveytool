@@ -28,6 +28,12 @@ public class Main {
 		IntResponseQuestion age = new IntResponseQuestion("age", "How old are you?", range);
 		survey.addQuestion(age);
 		
+		ArrayList<String> osystems = new ArrayList<String>();
+		osystems.add("mac OS");
+		osystems.add("Windows");
+		osystems.add("Linux");
+		
+		OptionResponseQuestion os = new OptionResponseQuestion("os", "What OS do you use?", osystems);
 		
 		BooleanResponseQuestion math = new BooleanResponseQuestion("math", "Is 2 + 2 = 3?");
 		survey.addQuestion(math);
