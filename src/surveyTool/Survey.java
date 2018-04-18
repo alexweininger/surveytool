@@ -2,23 +2,18 @@
  * Survey.java - Class for creating, editing, and controlling the filling out of a survey.
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/10/2018
+ * @version 4/17/2018
  */
 package surveyTool;
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import javax.swing.*;
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 public class Survey {
-	private String name = "";				//Name of survey taker
-	private String author = "";				//Name of author
+
+	private String name = ""; // name of survey taker
+	private String author = "not available"; // name of author, set to "not available" by default
 	private ArrayList<Question> questions = new ArrayList<Question>(); // array list of the questions in the survey
-	private boolean isAnonymous = true;		//If surveyor would like to be anonymous 
 
 	// constructors
 	public Survey(String name) {
@@ -28,40 +23,57 @@ public class Survey {
 	/*Constructor that overloads;
 	 * Adds author's name and if surveyor would like to be anonymous
 	 */
-	public Survey(String name, String author, boolean isAnonymous) {
+	public Survey(String name, String author) {
 		this.name = name;
 		this.author = author;
-		this.isAnonymous = isAnonymous;
 	}
 	
-	public void setName(String name) { // set name
-		this.name = name;
-	}
-	
+	// getters
+
 	public String getName() { // get name
 		return this.name;
 	}
-	
-//	public void setFrame(JFrame frame) {
-//		this.frame = frame;
-//	}
-//	
-//	public JFrame getFrame() {
-//		return this.frame;
-//	}
 
-	// returns an ArrayList of questions in the survey
-	public ArrayList<Question> getQuestions() {
+	public String getAuthor(){ // get author
+		return this.author;
+	}
+
+	public ArrayList<Question> getQuestions() { // returns an ArrayList of questions in the survey
 		return this.questions;
 	}
 
-	// adds a question to the survey
-	public void addQuestion(Question question) {
+	public ArrayList<String> getResults(int questionId) { // takes in a question id, returns an ArrayList of the answers for that question
+		return this.questions.get(questionId).getResponses();
+	}
+	
+	public String getResultsAsString() { // returns the displayResults string instead of printing to console
+		String str = "";
+		for(int i = 0; i < this.questions.size(); i++) {
+			Question q = questions.get(i);
+			str += q.displayResults();
+		}
+		return str;
+	}
+	
+	// setters
+
+	public void setName(String name) { // set name
+		this.name = name;
+	}
+
+	public void setAuthor(String author) { // set author
+		this.author = author;
+	}
+
+	public void setQuestion(ArrayList<Question> questions) { // set questions list
+		this.questions = questions;
+	}
+
+	public void addQuestion(Question question) { // adds a question to the survey
 		this.questions.add(question);
 	}
 
-	// removes the specified question from the survey
-	public boolean removeQuestion(int questionId) {
+	public boolean removeQuestion(int questionId) { // removes the specified question from the survey
 		try {
 			this.questions.remove(questionId);
 			return true;
@@ -70,60 +82,35 @@ public class Survey {
 		}
 	}
 
-	// returns the displayResults string instead of printing to console
-	public String getResultsAsString() {
-		String str = "";
-		for(int i = 0; i < this.questions.size(); i++) {
-			Question q = questions.get(i);
-			str+= q.getText() + "\nResponses:\n";
-			str+= q.getResponses().toString() + "\n";
-		}
-		return str;
-	}
+	// display methods
 
-	// displays the results/data of the survey in the console
-	public void displayResults() {
-		for(int i = 0; i < this.questions.size(); i++) {
-			Question q = questions.get(i);
-			q.displayResults();
-		}
-	}
-
-	// takes in a question id, returns an ArrayList of the answers for that question
-	public ArrayList<String> getResults(int questionId) {
-		return this.questions.get(questionId).getResponses();
-	}
-	
-	// runs one instance of the survey, to fill out multiple responses to a survey you need to run initSurvey more than once
-	public void initSurvey() {
-		Scanner kb = new Scanner(System.in);
-		this.toString();
-		for(int i = 0; i < this.questions.size(); i++) {
-			Question q = this.questions.get(i);
-			System.out.println(q.getText());
-			String resp = kb.nextLine();
-			q.addResponse(resp);
-		}
-		this.displayResults();
-	}
-	
-	// display the survey in console
-	public void displaySurvey(int index) {
+	public void displaySurvey(int index) { // display the survey in console
 		boolean valid = false;
 		int i = 0;
 		while(i < this.questions.size()) {
 			Question q = this.questions.get(i);
 			valid = q.displayQuestion();
 			
-			if(valid) {
+			if(valid) { // if the response is not valid, do not move to the next question
 				i++;
 			}
 		}
-		
-		this.displayResults();
 	}
 
-	public String toString() {
-		return "Survey [name=" + name + ", author=" + author + ", questions=" + questions + ", isAnonymous=" + isAnonymous + ", getQuestions()=" + getQuestions() + "]";
+	public void displayResults() { 	// displays the results/data of the survey in the console
+		for(int i = 0; i < this.questions.size(); i++) {
+			Question q = questions.get(i);
+			q.displayResults();
+		}
+	}
+
+	public String toString() { // Survey toString
+		String str = "";
+		str += "------ Survey toString -------\n";
+		str += "| name: " + this.getName() + "\n";
+		str += "| author: " + this.getAuthor() + "\n";
+		str += "| questions: " + this.getQuestions() + "\n";
+		str += "-------------------------------------------\n";
+		return str;
 	}
 }

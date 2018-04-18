@@ -2,7 +2,7 @@
  * Question.java - top level super class for all questions.
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/10/2018
+ * @version 4/17/2018
  */
 package surveyTool;
 
@@ -10,20 +10,26 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Question implements Display {
+
 	private String name = ""; // name of the question
 	private int id = -1; // based on number of questions already in survey
 	private String questionText = ""; // the question
 	private ArrayList<String> responses = new ArrayList<String>(); // list of user responses to the question
 
+	private static int nextId = 1;
+
 	// constructors
 	public Question(String name) {
 		this.name = name;
-		id++;
+		this.id = nextId;
+		nextId++;
 	}
-
+	
 	public Question(String name, String questionText) {
 		this.name = name;
 		this.questionText = questionText;
+		this.id = nextId;
+		nextId++;
 	}
 
 	public void setName(String name) { // set the name of the question
@@ -46,7 +52,7 @@ public class Question implements Display {
 		return this.questionText;
 	}
 
-	public void addResponse(String response) { // add the String to the end of the responses list
+	public void addResponse(String response) {  // add the String to the end of the responses list
 		this.responses.add(response);
 	}
 
@@ -54,40 +60,37 @@ public class Question implements Display {
 		this.responses = responses;
 	}
 
-	// Return responses to questions
-	public ArrayList<String> getResponses() {
+	public ArrayList<String> getResponses() { //Return responses to questions
 		return this.responses;
 	}
 
-	// Validates response(range, data type, etc.)
-	public boolean isValidResponse(String response) {
-		return true;
-	}
-
-	// Required by interface to display question TODO
-	public boolean displayQuestion() {
+	public boolean displayQuestion() { 	// required by interface to display question TODO
 		Scanner kb = new Scanner(System.in);
+		String str = this.getId() + ". " + this.getText() + "\n";
+		str += "Please respond to this question in one line on one line, press enter to submit."
+		System.out.println(str);
 
-		System.out.println(this.getText());
-		String resp = kb.nextLine();
-
-		if (this.isValidResponse(resp)) {
-			this.addResponse(resp);
-			return true;
-		} else {
-			return false;
-		}
+		String resp = kb.nextLine(); // we do not validate this response as anything can be taken for a response to just a question
 	}
 
-	public void displayResults() {
-		System.out.println("Responses for question: " + this.getName());
-		for (int i = 0; i < this.responses.size(); i++) {
-			System.out.println(this.responses.get(i));
-		}
+	public void displayResults() { // print the results to the console
+		System.out.println("|--- Question: " + this.getName() + " ---|");
+		System.out.println("| questionText: " + this.getText() + "\n");
+		System.out.println("| responses: " + this.getResponses() + "\n");
+		// for (int i = 0; i < this.responses.size(); i++) {
+		// 	System.out.println(this.responses.get(i));
+		// }
+		System.out.println("|----------------------------------------|");
 	}
-
-	@Override
-	public String toString() {
-		return "Question [name=" + name + ", id=" + id + ", questionText=" + questionText + ", responses=" + responses + "]";
+	
+	public String toString() { // Question toString()
+		String str = "";
+		str += "| ------ Question toString() -------\n"
+		str += "| name: " + this.getName() + "\n";
+		str += "| id: " + this.getId() + "\n";
+		str += "| questionText: " + this.getText() + "\n";
+		str += "| responses: " + this.getResponses() + "\n";
+		str += "| ----------------------------------\n"
+		return str;
 	}
 }
