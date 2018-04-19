@@ -1,8 +1,9 @@
 /**
- * OptionResponseQuestion.java - Extends ListResponseQuestion, so that only 1 option may be selected and submitted.  (fill in the bubble)
+ * OptionResponseQuestion.java - Extends Question, and is a class for creating a multiple choice question.
+ * E.g. fill in the bubble question.  
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/17/2018
+ * @version last updated 4/18/2018
  */
 
 package surveyTool;
@@ -22,7 +23,7 @@ public class OptionResponseQuestion extends Question implements Display {
 		super(name, questionText);
 		this.options = options;
 	}
-	
+
 	public void setOptions(ArrayList<String> options) { // set the list of options
 		this.options = options;
 	}
@@ -31,15 +32,14 @@ public class OptionResponseQuestion extends Question implements Display {
 		return this.options;
 	}
 
-	public boolean isValidResponse(String response) { // Is the user response valid, returns boolean.  This method is called inside of the displayQuestion method.
-		for(int i = 0; i < this.getOptions().size(); i++) {
-			if(response.equals("" + (i + 1))){ // checking if the user input string matches an index string (adding 1 because list indexes start at 0)
-				//System.out.println("INFO: OptionResponse.isValid - user input is valid");
+	public boolean isValidResponse(String response) { // Is the user response valid, returns boolean. This method is called inside of the displayQuestion method.
+		for (int i = 0; i < this.getOptions().size(); i++) {
+			if (response.equals("" + (i + 1))) { // checking if the user input string matches an index string (adding 1 because list indexes start at 0)
 				super.addResponse(this.getOptions().get(i)); // setting the response to the corresponding option
 				return true;
 			}
 		}
-		//System.out.println("INFO: OptionResponse.isValid - Please enter a number within the answer range.");
+		System.out.println("Please response within the option range.");
 		return false;
 	}
 
@@ -47,17 +47,19 @@ public class OptionResponseQuestion extends Question implements Display {
 		Scanner kb = new Scanner(System.in);
 		String str = this.getId() + ". " + this.getText() + "";
 		str += "  (Please use the option number to respond.)\n\n";
-		for(int i = 0; i < this.getOptions().size(); i++) {
+		for (int i = 0; i < this.getOptions().size(); i++) {
 			str += i + 1 + ". " + this.getOptions().get(i) + "\n";
 		}
-		
+
 		System.out.println(str);
 
 		String resp = kb.nextLine();
 		System.out.println();
-		kb.close();
-		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
-			//System.out.println("INFO: OptionResponse.displayQuestion - added response: " + resp + " to the response list.");
+		if (this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will
+											// this.isValidResponse run the method inside this class or the OptionResponse
+											// class?
+			// System.out.println("INFO: OptionResponse.displayQuestion - added response: "
+			// + resp + " to the response list.");
 			return true;
 		} else {
 			return false;

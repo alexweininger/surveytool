@@ -3,6 +3,20 @@
  * 
  * @author Alex Weininger and Niraj Mali
  * @version 4/17/2018
+ * 
+ * 
+ * 
+ */
+
+/**
+ * The surveyTool program can create and facilitate surveys.  The bulk of the logic and programming has gone into implementing different types of questions (e.g. IntResponseQuestion), which are children to the parent class Question. 
+ * The Survey class holds the questions, and holds the methods for creating a survey, and facilitating a survey.  This class also has methods for displaying the results of the survey.
+ * 
+ * The major changes to our program since part A are, the removal of unneeded classes, removal of unneeded variables, small reorganization of the class hierarchy (since we removed some), and the addition of the displayResults method.
+ * We made these changes as we realized that some classes resembled other classes to much.  And that it would be more efficient and logical to remove them.  For example RatingResponse was removed as IntResponse can function in the same way.
+ * In part b we also decided against creating a gui as it would distract us from completing the main goal, which was to implement a surveying program.
+ * 
+ * Some known errors or shortcomings in our program are that 
  */
 package surveyTool;
 

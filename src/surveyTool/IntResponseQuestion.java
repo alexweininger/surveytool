@@ -3,10 +3,8 @@
  * --For a question that takes an integer as a response, 
  * --Implements Display interface, Inherits Question class
  * 
- * TODO cast to String because all other questions are String?
- * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/17/2018
+ * @version last updated 4/18/2018
  */
 
 package surveyTool;
@@ -99,7 +97,6 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 				isInt = true;
 				response = kb.nextInt();
 				System.out.println();
-				kb.close();
 			} catch (Exception e) {
 				System.out.println("Please enter an integer value only.");
 				System.out.println("INFO: " + e);
