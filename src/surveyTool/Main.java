@@ -3,6 +3,19 @@
  * 
  * @author Alex Weininger and Niraj Mali
  * @version 4/17/2018
+ * 
+ * PROGRAM: Survey builder, create different types of questions extending from a parent Question class. Different classes require 
+ * different parameters.
+ * 
+ * MAJOR CHANGES:
+ * April 14th: JOptionPane/JPanel idea scrapped; learning curve and implementation proved too much hassle for timeframe
+ * April 15th: Removed ListResponseQuestion, functionality was identical to the OptionResponseClass
+ * April 15th: Removed RatingResponseQuestion, functionality identical to IntResponseQuestion
+ * April 17th: Removed isAnoynymous parameter from Survey class
+ * 
+ * ERRORS/SHORTCOMINGS:
+ * 
+ * OVERRIDING EXAMPLES:
  */
 package surveyTool;
 
