@@ -1,8 +1,8 @@
 /**
- * TextResponseQuestion.java - class to represent a text response of practically unlimited length
+ * TextResponseQuestion.java - Class to represent a String response of with a custom character limit.
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/17/2018
+ * @version last updated 4/18/2018
  */
 
 package surveyTool;
@@ -31,19 +31,19 @@ public class TextResponseQuestion extends Question implements Display {
 	}
 
 	public boolean isValidResponse(String response) { // check if the response is valid, e.g. if it is under the character limit
-		if (response.length() > charLimit) {
+		if (response.length() > charLimit) { // if the response is greater than the character limit then it is invalid
 			return false;
 		}
-		this.addResponse(response);
+		this.addResponse(response); // if it is valid, add it to the response array list
 		return true;
 	}
 
 	public boolean displayQuestion() { // display the question in the console
-		return super.displayQuestion();
+		return super.displayQuestion(); // call super displayQuestion
 	}
 
 	public void displayResults() { // display the results in the console
-		super.displayResults();
+		super.displayResults(); // call super displayResults
 	}
 
 	public String toString() { // TextResponse toString()
