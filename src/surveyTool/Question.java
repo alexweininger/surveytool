@@ -83,7 +83,7 @@ public class Question implements Display {
 
 	public void displayResults() { // print the results to the console
 		System.out.println(this.getId() + ". Question: " + this.getName());
-		System.out.println("| questionText: " + this.getText());
+		System.out.println("| question: " + this.getText());
 		System.out.println("| responses: " + this.getResponses() + "\n");
 	}
 	
