@@ -1,8 +1,10 @@
 /**
- * Question.java - top level super class for all questions.
+ * Question.java - Top level parent class for all questions.  
+ * Contains the variables and methods for a general String response question. 
+ * Child classes of this class are more specialized questions.
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/17/2018
+ * @version last updated 4/18/2018
  */
 package surveyTool;
 
@@ -24,7 +26,7 @@ public class Question implements Display {
 		this.id = nextId;
 		nextId++;
 	}
-	
+
 	public Question(String name, String questionText) {
 		this.name = name;
 		this.questionText = questionText;
@@ -52,7 +54,7 @@ public class Question implements Display {
 		return this.questionText;
 	}
 
-	public void addResponse(String response) {  // add the String to the end of the responses list
+	public void addResponse(String response) { // add the String to the end of the responses list
 		this.responses.add(response);
 	}
 
@@ -60,22 +62,23 @@ public class Question implements Display {
 		this.responses = responses;
 	}
 
-	public ArrayList<String> getResponses() { //Return responses to questions
+	public ArrayList<String> getResponses() { // Return responses to questions
 		return this.responses;
 	}
-	
+
 	public boolean isValidResponse(String response) { // check if the response is valid, e.g. if it is under the character limit
 		this.addResponse(response);
 		return true;
 	}
 
-	public boolean displayQuestion() { 	// required by interface to display question TODO
+	public boolean displayQuestion() { // required by interface to display question TODO
 		Scanner kb = new Scanner(System.in);
 		String str = this.getId() + ". " + this.getText() + "";
 		str += "  (Please respond to this question in one line on one line, press enter to submit.)\n";
 		System.out.println(str);
-		
-		String response = kb.nextLine(); // we do not validate this response as anything can be taken for a response to just a question
+
+		String response = kb.nextLine(); // we do not validate this response as anything can be taken for a response to
+											// just a question
 		System.out.println();
 		kb.close();
 		return this.isValidResponse(response);
@@ -86,7 +89,7 @@ public class Question implements Display {
 		System.out.println("| question: " + this.getText());
 		System.out.println("| responses: " + this.getResponses() + "\n");
 	}
-	
+
 	public String toString() { // Question toString()
 		String str = "";
 		str += "| ------ Question toString() -------\n";
