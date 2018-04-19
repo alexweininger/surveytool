@@ -1,8 +1,9 @@
 /**
- * Interface to display a survey question in the console.
+ * Display.java - Interface to display a survey question in the console.
+ * This interface forces classes that implement it to provide a displayQuestion method, and a displayResults method.
  * 
  * @author Alex Weininger and Niraj Mali
- * @version 4/17/2018
+ * @version last updated 4/18/2018
  */
 package surveyTool;
 
