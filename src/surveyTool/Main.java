@@ -43,7 +43,11 @@ public class Main {
 
 		BooleanResponseQuestion math = new BooleanResponseQuestion("Math", "True or False, is 2 + 2 = 3?"); // 5
 		survey.addQuestion(math);
-
+		
+		//Test Response Limit
+		TextResponseQuestion oneWord = new TextResponseQuestion("Personality", "Use one word to describe yourself", 8);
+		survey.addQuestion(oneWord);
+		
 		survey.displaySurvey(0); // runs one instance of the survey
 		//survey.displaySurvey(0);
 
