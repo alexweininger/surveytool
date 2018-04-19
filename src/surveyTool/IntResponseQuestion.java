@@ -99,10 +99,9 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 				System.out.println();
 			} catch (Exception e) {
 				System.out.println("Please enter an integer value only.");
-				System.out.println("INFO: " + e);
 				isInt = false;
 			}
-		} while (!(isInt)); // NIRAJ: Have you tested this? Does it crash if I enter a String?
+		} while (!(isInt)); 
 
 		return this.isValidResponse(response);
 	}
