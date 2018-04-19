@@ -86,8 +86,7 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	public boolean displayQuestion() { // TODO
 		boolean isInt = true;
 		int response = 0;
-		// moved out of the do and try blocks, move back into the try block if this
-		// breaks
+		// moved out of the do and try blocks, move back into the try block if this breaks
 		do {
 			try {
 				Scanner kb = new Scanner(System.in);

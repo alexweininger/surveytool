@@ -4,11 +4,6 @@
  * @author Alex Weininger and Niraj Mali
  * @version 4/17/2018
  * 
- * 
- * 
- */
-
-/**
  * The surveyTool program can create and facilitate surveys.  The bulk of the logic and programming has gone into implementing different types of questions (e.g. IntResponseQuestion), which are children to the parent class Question. 
  * The Survey class holds the questions, and holds the methods for creating a survey, and facilitating a survey.  This class also has methods for displaying the results of the survey.
  * 
