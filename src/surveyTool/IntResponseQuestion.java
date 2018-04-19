@@ -89,9 +89,10 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	public boolean displayQuestion() { // TODO 
 		boolean isInt = true;
 		int response = 0;
-		Scanner kb = new Scanner(System.in); // moved out of the do and try blocks, move back into the try block if this breaks
+		 // moved out of the do and try blocks, move back into the try block if this breaks
 		do {
 			try {
+				Scanner kb = new Scanner(System.in);
 				String str = this.getId() + ". " + this.getText() + "";
 				str += "  (Please respond with an integer.)\n";
 				System.out.println(str);

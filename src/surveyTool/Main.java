@@ -29,7 +29,7 @@ public class Main {
 		survey.addQuestion(age);
 		
 		ArrayList<String> osystems = new ArrayList<String>();
-		osystems.add("mac OS");
+		osystems.add("Mac OS");
 		osystems.add("Windows");
 		osystems.add("Linux");
 		
