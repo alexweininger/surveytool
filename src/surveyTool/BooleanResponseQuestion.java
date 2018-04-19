@@ -62,7 +62,7 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 
 	public void displayResults() { // display the results in console
 		System.out.println(this.getId() + ". BooleanResponse: " + this.getName());
-		System.out.println("| questionText: " + this.getText());
+		System.out.println("| question: " + this.getText());
 		System.out.println("| options: [true, false]");
 		System.out.println("| responses: " + this.getResponses() + "\n");
 	}

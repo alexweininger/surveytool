@@ -66,7 +66,7 @@ public class OptionResponseQuestion extends Question implements Display {
 
 	public void displayResults() { // displays the OptionResponse results in the console
 		System.out.println(this.getId() + ". OptionResponse: " + this.getName());
-		System.out.println("| questionText: " + this.getText());
+		System.out.println("| question: " + this.getText());
 		System.out.println("| options: " + this.getOptions());
 		System.out.println("| responses: " + this.getResponses() + "\n");
 	}
