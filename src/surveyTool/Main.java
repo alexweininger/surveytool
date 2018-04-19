@@ -14,21 +14,21 @@
  * 
  * The major changes to our program since part A are, the removal of unneeded classes, removal of unneeded variables, small reorganization of the class hierarchy (since we removed some), and the addition of the displayResults method.
  * We made these changes as we realized that some classes resembled other classes to much.  And that it would be more efficient and logical to remove them.  For example RatingResponse was removed as IntResponse can function in the same way.
- * In part b we also decided against creating a gui as it would distract us from completing the main goal, which was to implement a surveying program.
+ * In part b we also decided against creating a GUI as it would distract us from completing the main goal, which was to implement a surveying program.
  * 
- * Some known errors or shortcomings in our program are that 
- * PROGRAM: Survey builder, create different types of questions extending from a parent Question class. Different classes require 
- * different parameters.
+ * Some known errors or shortcomings in our program are that this program does not store data anywhere outside of the runtime.  So, all data inside surveys is erased after the program stops.
  * 
- * MAJOR CHANGES:
+ * To run this program you will need to run Main.java.  If you would like to create your own survey, you will do it inside Main.java as well.
+ * 
+ * Overriding methods are isValidResponse, which is in Question.java and then overridden in the TextResponse class, and in most other classes.  DisplayResults is also overloaded in the OptionResponse class, and each toString is overloaded.
+ * The use of super is located within the displayQuestion methods in the TextResponse class, and IntResponse class.
+ * 
+ * MAJOR CHANGELOG:
  * April 14th: JOptionPane/JPanel idea scrapped; learning curve and implementation proved too much hassle for timeframe
  * April 15th: Removed ListResponseQuestion, functionality was identical to the OptionResponseClass
  * April 15th: Removed RatingResponseQuestion, functionality identical to IntResponseQuestion
  * April 17th: Removed isAnoynymous parameter from Survey class
  * 
- * ERRORS/SHORTCOMINGS:
- * 
- * OVERRIDING EXAMPLES:
  */
 package surveyTool;
 
