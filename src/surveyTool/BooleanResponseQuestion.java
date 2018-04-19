@@ -10,6 +10,7 @@ package surveyTool;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class BooleanResponseQuestion extends OptionResponseQuestion implements Display {
 
@@ -44,42 +45,37 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 
 	public boolean displayQuestion() { // display the question in console and get the users response, validate it, and add it to the responses list
 		Scanner kb = new Scanner(System.in);
-		String str = this.getId() + ". " + this.getText() + "\n";
-		str += "Please respond to this question with 1 for true, or 2 for false";
+		String str = this.getId() + ". " + this.getText() + "  (Please respond with either 1 for true, or 2 for false)\n";
+		//str += "Please respond to this question using 1 for true, or 2 for false.\n";
 		System.out.println(str);
 
 		String resp = kb.nextLine();
+		System.out.println();
 		
 		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
-			this.addResponse(resp);
-			System.out.println("INFO: BooleanResponse.displayQuestion - added response: " + resp + " to the response list.");
+			//System.out.println("INFO: BooleanResponse.displayQuestion - added response: " + resp + " to the response list.");
 			return true;
 		} else {
 			return false;
 		}
 	}
-	}
 
 	public void displayResults() { // display the results in console
-		System.out.println("|--- BooleanResponse: " + this.getName() + " ---|");
-		System.out.println("| questionText: " + this.getText() + "\n");
-		System.out.println("| options: [true, false]\n");
+		System.out.println(this.getId() + ". BooleanResponse: " + this.getName());
+		System.out.println("| questionText: " + this.getText());
+		System.out.println("| options: [true, false]");
 		System.out.println("| responses: " + this.getResponses() + "\n");
-		// for (int i = 0; i < this.responses.size(); i++) {
-		// 	System.out.println(this.responses.get(i));
-		// }
-		System.out.println("|----------------------------------------|");
 	}
 
 	public String toString() { // BooleanResponse toString()
 		String str = "";
-		str += "| ------ BooleanResponse toString() -------\n"
+		str += "| ------ BooleanResponse toString() -------\n";
 		str += "| name: " + this.getName() + "\n";
 		str += "| id: " + this.getId() + "\n";
 		str += "| questionText: " + this.getText() + "\n";
 		str += "| options: " + this.getResponses() + "\n";
 		str += "| responses: " + this.getResponses() + "\n";
-		str += "| ----------------------------------------\n"
+		str += "| ----------------------------------------\n";
 		return str;
 	}
 

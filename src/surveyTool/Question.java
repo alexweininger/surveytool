@@ -63,34 +63,38 @@ public class Question implements Display {
 	public ArrayList<String> getResponses() { //Return responses to questions
 		return this.responses;
 	}
+	
+	public boolean isValidResponse(String response) { // check if the response is valid, e.g. if it is under the character limit
+		this.addResponse(response);
+		return true;
+	}
 
 	public boolean displayQuestion() { 	// required by interface to display question TODO
 		Scanner kb = new Scanner(System.in);
-		String str = this.getId() + ". " + this.getText() + "\n";
-		str += "Please respond to this question in one line on one line, press enter to submit."
+		String str = this.getId() + ". " + this.getText() + "";
+		str += "  (Please respond to this question in one line on one line, press enter to submit.)\n";
 		System.out.println(str);
-
-		String resp = kb.nextLine(); // we do not validate this response as anything can be taken for a response to just a question
+		
+		String response = kb.nextLine(); // we do not validate this response as anything can be taken for a response to just a question
+		System.out.println();
+		
+		return this.isValidResponse(response);
 	}
 
 	public void displayResults() { // print the results to the console
-		System.out.println("|--- Question: " + this.getName() + " ---|");
-		System.out.println("| questionText: " + this.getText() + "\n");
+		System.out.println(this.getId() + ". Question: " + this.getName());
+		System.out.println("| questionText: " + this.getText());
 		System.out.println("| responses: " + this.getResponses() + "\n");
-		// for (int i = 0; i < this.responses.size(); i++) {
-		// 	System.out.println(this.responses.get(i));
-		// }
-		System.out.println("|----------------------------------------|");
 	}
 	
 	public String toString() { // Question toString()
 		String str = "";
-		str += "| ------ Question toString() -------\n"
+		str += "| ------ Question toString() -------\n";
 		str += "| name: " + this.getName() + "\n";
 		str += "| id: " + this.getId() + "\n";
 		str += "| questionText: " + this.getText() + "\n";
 		str += "| responses: " + this.getResponses() + "\n";
-		str += "| ----------------------------------\n"
+		str += "| ----------------------------------\n";
 		return str;
 	}
 }

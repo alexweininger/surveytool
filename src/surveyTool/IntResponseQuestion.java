@@ -72,6 +72,7 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 
 	public boolean isValidResponse(int response) {
 		if(response >= range[0] && response <= range[1]) {
+			this.addResponse("" + response);
 			return true;
 		} else {
 			System.out.println("Your response is outside the valid range of " + this.range[0] + " to " + this.range[1]);
@@ -91,11 +92,12 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 		Scanner kb = new Scanner(System.in); // moved out of the do and try blocks, move back into the try block if this breaks
 		do {
 			try {
-				String str = this.getId() + ". " + this.getText() + "\n";
-				str += "Please respone with an integer.\n";
+				String str = this.getId() + ". " + this.getText() + "";
+				str += "  (Please respond with an integer.)\n";
 				System.out.println(str);
 				isInt = true;
 				response = kb.nextInt();
+				System.out.println();
 			}
 			catch(Exception e) {
 				System.out.println("Please enter an integer value only.");
@@ -113,13 +115,13 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	
 	public String toString() { // IntResponse toString()
 		String str = "";
-		str += "| ------ IntResponse toString() -------\n"
+		str += "| ------ IntResponse toString() -------\n";
 		str += "| name: " + this.getName() + "\n";
 		str += "| id: " + this.getId() + "\n";
 		str += "| questionText: " + this.getText() + "\n";
 		str += "| range: " + this.getRange() + "\n";
 		str += "| responses: " + this.getResponses() + "\n";
-		str += "| --------------------------------------\n"
+		str += "| --------------------------------------\n";
 		return str;
 	}
 }

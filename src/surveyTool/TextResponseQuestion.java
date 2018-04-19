@@ -34,6 +34,7 @@ public class TextResponseQuestion extends Question implements Display {
 		if(response.length() > 2000) {
 			return false;
 		}
+		this.addResponse(response);
 		return true;
 	}
 
@@ -47,12 +48,12 @@ public class TextResponseQuestion extends Question implements Display {
 
 	public String toString() { // TextResponse toString()
 		String str = "";
-		str += "| ------ TextResponse toString() -------\n"
+		str += "| ------ TextResponse toString() -------\n";
 		str += "| name: " + this.getName() + "\n";
 		str += "| id: " + this.getId() + "\n";
 		str += "| questionText: " + this.getText() + "\n";
 		str += "| responses: " + this.getResponses() + "\n";
-		str += "| ----------------------------------------\n"
+		str += "| ----------------------------------------\n";
 		return str;
 	}
 }
