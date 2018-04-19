@@ -23,37 +23,24 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 	}
 
 	public boolean isValidResponse(String response) { // check if the user response if valid
-		// if (resp.equalsIgnoreCase("1") || resp.equalsIgnoreCase("2")) {
-			
-		// 	System.out.println(resp);
-			
-		// 	String response = (resp.equalsIgnoreCase("1")) ? "true" : "false";
-			
-		// 	super.addResponse(response);
-			
-		// 	System.out.println(response);
-		// 	System.out.println(this.toString());
-			
-		// 	return true;
-			
-		// } else {
-		// 	return false;
-		// }
-
 		return super.isValidResponse(response); // new
 	}
 
-	public boolean displayQuestion() { // display the question in console and get the users response, validate it, and add it to the responses list
+	public boolean displayQuestion() { // display the question in console and get the users response, validate it, and
+										// add it to the responses list
 		Scanner kb = new Scanner(System.in);
 		String str = this.getId() + ". " + this.getText() + "  (Please respond with either 1 for true, or 2 for false)\n";
-		//str += "Please respond to this question using 1 for true, or 2 for false.\n";
+		// str += "Please respond to this question using 1 for true, or 2 for false.\n";
 		System.out.println(str);
 
 		String resp = kb.nextLine();
 		System.out.println();
-		
-		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
-			//System.out.println("INFO: BooleanResponse.displayQuestion - added response: " + resp + " to the response list.");
+
+		if (this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will
+											// this.isValidResponse run the method inside this class or the OptionResponse
+											// class?
+			// System.out.println("INFO: BooleanResponse.displayQuestion - added response: "
+			// + resp + " to the response list.");
 			return true;
 		} else {
 			return false;

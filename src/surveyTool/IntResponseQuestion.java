@@ -71,7 +71,7 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 */
 
 	public boolean isValidResponse(int response) {
-		if(response >= range[0] && response <= range[1]) {
+		if (response >= range[0] && response <= range[1]) {
 			this.addResponse("" + response);
 			return true;
 		} else {
@@ -86,10 +86,11 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 	 * --Parameters: none --Returns: boolean --Required by implemented interface
 	 * --Prints question to consoler
 	 */
-	public boolean displayQuestion() { // TODO 
+	public boolean displayQuestion() { // TODO
 		boolean isInt = true;
 		int response = 0;
-		 // moved out of the do and try blocks, move back into the try block if this breaks
+		// moved out of the do and try blocks, move back into the try block if this
+		// breaks
 		do {
 			try {
 				Scanner kb = new Scanner(System.in);
@@ -99,21 +100,20 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 				isInt = true;
 				response = kb.nextInt();
 				System.out.println();
-			}
-			catch(Exception e) {
+			} catch (Exception e) {
 				System.out.println("Please enter an integer value only.");
 				System.out.println("INFO: " + e);
 				isInt = false;
 			}
-		}while(!(isInt)); // NIRAJ: Have you tested this? Does it crash if I enter a String?
-		
+		} while (!(isInt)); // NIRAJ: Have you tested this? Does it crash if I enter a String?
+
 		return this.isValidResponse(response);
 	}
-	
+
 	public void displayResults() { // display the results in the console
 		super.displayResults();
 	}
-	
+
 	public String toString() { // IntResponse toString()
 		String str = "";
 		str += "| ------ IntResponse toString() -------\n";
