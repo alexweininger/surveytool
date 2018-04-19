@@ -35,7 +35,7 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 
 		String resp = kb.nextLine();
 		System.out.println();
-
+		kb.close();
 		if (this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will
 											// this.isValidResponse run the method inside this class or the OptionResponse
 											// class?

@@ -31,7 +31,7 @@ public class TextResponseQuestion extends Question implements Display {
 	}
 
 	public boolean isValidResponse(String response) { // check if the response is valid, e.g. if it is under the character limit
-		if(response.length() > charLimit) {
+		if (response.length() > charLimit) {
 			return false;
 		}
 		this.addResponse(response);
@@ -41,7 +41,7 @@ public class TextResponseQuestion extends Question implements Display {
 	public boolean displayQuestion() { // display the question in the console
 		return super.displayQuestion();
 	}
-	
+
 	public void displayResults() { // display the results in the console
 		super.displayResults();
 	}

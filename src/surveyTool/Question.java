@@ -77,7 +77,7 @@ public class Question implements Display {
 		
 		String response = kb.nextLine(); // we do not validate this response as anything can be taken for a response to just a question
 		System.out.println();
-		
+		kb.close();
 		return this.isValidResponse(response);
 	}
 

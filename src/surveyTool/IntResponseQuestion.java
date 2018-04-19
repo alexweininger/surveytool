@@ -11,7 +11,6 @@
 
 package surveyTool;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class IntResponseQuestion extends TextResponseQuestion implements Display {
@@ -100,6 +99,7 @@ public class IntResponseQuestion extends TextResponseQuestion implements Display
 				isInt = true;
 				response = kb.nextInt();
 				System.out.println();
+				kb.close();
 			} catch (Exception e) {
 				System.out.println("Please enter an integer value only.");
 				System.out.println("INFO: " + e);

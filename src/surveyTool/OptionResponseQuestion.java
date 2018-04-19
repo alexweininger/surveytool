@@ -55,7 +55,7 @@ public class OptionResponseQuestion extends Question implements Display {
 
 		String resp = kb.nextLine();
 		System.out.println();
-		
+		kb.close();
 		if(this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will this.isValidResponse run the method inside this class or the OptionResponse class?
 			//System.out.println("INFO: OptionResponse.displayQuestion - added response: " + resp + " to the response list.");
 			return true;
