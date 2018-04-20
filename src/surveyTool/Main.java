@@ -49,6 +49,9 @@ public class Main {
 		IntResponseQuestion age = new IntResponseQuestion("Age", "How old are you?", range); // 3
 		survey.addQuestion(age);
 		
+		survey.removeQuestion(3);
+		System.out.println(survey.toString());
+		
 		ArrayList<String> osystems = new ArrayList<String>();
 		osystems.add("Mac OS");
 		osystems.add("Windows");

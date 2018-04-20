@@ -88,7 +88,7 @@ public class Survey {
 	public void displaySurvey(int index) { // display the survey in console
 
 		Scanner kb = new Scanner(System.in);
-		System.out.println("Would you like to participate in " + this.getName() + "? (Response with y or n)\n");
+		System.out.println("Would you like to participate in " + this.getName() + "? (Respond with y or n)\n");
 		String response = kb.next();
 		System.out.println();
 		if (response.equalsIgnoreCase("n")) {
@@ -124,7 +124,11 @@ public class Survey {
 		str += "------ Survey toString -------\n";
 		str += "| name: " + this.getName() + "\n";
 		str += "| author: " + this.getAuthor() + "\n";
-		str += "| questions: " + this.getQuestions() + "\n";
+		str += "| questions:\n";
+		for(int i = 0; i < this.getQuestions().size(); i++) {
+			str += "| " + (i + 1) + ". " + this.getQuestions().get(i).getText() + "\n";
+		}
+		
 		str += "-------------------------------------------\n";
 		return str;
 	}
