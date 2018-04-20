@@ -31,22 +31,26 @@ import java.util.ArrayList;
 
 public class Main {
 	public static void main(String[] args) { // Main method to execute and test survey
-
+		
+		//Create Survey
 		Survey survey = new Survey("Survey Test", "Alex");
 
+		//Test Question Class
 		Question name = new Question("Name", "What is your name?"); // 1
 		survey.addQuestion(name);
 
+		//Test TextResponseQuestion
 		Question city = new TextResponseQuestion("City", "What city do you live in?"); // 2
 		survey.addQuestion(city);
 
-		ArrayList<String> colors = new ArrayList<String>();
-		colors.add("green");
-		colors.add("red");
-		colors.add("blue");
-
 		int[] range = {0, 130};
 		IntResponseQuestion age = new IntResponseQuestion("Age", "How old are you?", range); // 3
+		survey.addQuestion(age);
+		
+		
+		survey.removeQuestion(2);
+		System.out.println(survey.toString());
+		
 		survey.addQuestion(age);
 		
 		//OptionResponseQuestions Test Case 1
@@ -66,6 +70,7 @@ public class Main {
 		colorList.add("Green");
 		colorList.add("Other");
 		color.setOptions(colorList);
+		survey.addQuestion(color);
 		
 		//Boolean Test Case 
 		BooleanResponseQuestion math = new BooleanResponseQuestion("Math", "True or False, is 2 + 2 = 3?"); // 5
