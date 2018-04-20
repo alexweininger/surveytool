@@ -30,16 +30,11 @@ public class BooleanResponseQuestion extends OptionResponseQuestion implements D
 										// add it to the responses list
 		Scanner kb = new Scanner(System.in);
 		String str = this.getId() + ". " + this.getText() + "  (Please respond with either 1 for true, or 2 for false)\n";
-		// str += "Please respond to this question using 1 for true, or 2 for false.\n";
 		System.out.println(str);
 
 		String resp = kb.nextLine();
 		System.out.println();
-		if (this.isValidResponse(resp)) { // NIRAJ: If this method is run on an OptionResponse question will
-											// this.isValidResponse run the method inside this class or the OptionResponse
-											// class?
-			// System.out.println("INFO: BooleanResponse.displayQuestion - added response: "
-			// + resp + " to the response list.");
+		if (this.isValidResponse(resp)) { 
 			return true;
 		} else {
 			return false;

@@ -49,21 +49,28 @@ public class Main {
 		IntResponseQuestion age = new IntResponseQuestion("Age", "How old are you?", range); // 3
 		survey.addQuestion(age);
 		
+		//OptionResponseQuestions Test Case 1
 		ArrayList<String> osystems = new ArrayList<String>();
 		osystems.add("Mac OS");
 		osystems.add("Windows");
 		osystems.add("Linux");
-		
 		OptionResponseQuestion os = new OptionResponseQuestion("Operating System", "What OS do you use?", osystems); // 4
 		survey.addQuestion(os);
-
-		// what happens if we make this an instance of the OptionsResponse class and assign it to a BooleanResponse
-		// OptionResponseQuestion math2 = new BooleanResponseQuestion("math2", "Is 3 + 2 = 5?");
-		// WAIT it will work if we make it of type Question, like so:
-		// Question math3 = new BooleanResponseQuestion("math3", "Is 5 + 3 = 8?");
-
+		
+		//OptionResponseQuestion Test Case 2
+		OptionResponseQuestion color = new OptionResponseQuestion("Favorite Color", "Which color is your favorite?");
+		ArrayList<String> colorList = new ArrayList<String>();
+		colorList.add("Blue");
+		colorList.add("Red");
+		colorList.add("Yellow");
+		colorList.add("Green");
+		colorList.add("Other");
+		color.setOptions(colorList);
+		
+		//Boolean Test Case 
 		BooleanResponseQuestion math = new BooleanResponseQuestion("Math", "True or False, is 2 + 2 = 3?"); // 5
 		survey.addQuestion(math);
+		
 		
 		//Test Response Limit
 		TextResponseQuestion oneWord = new TextResponseQuestion("Personality", "Use one word to describe yourself", 8);
